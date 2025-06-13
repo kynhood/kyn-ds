@@ -5,7 +5,7 @@ import './banner.css';
 import Banner from './Banner';
 
 const meta = {
-  title: 'Example/Banner',
+  title: 'Components/Banner',
   component: Banner,
   parameters: {
     layout: 'centered',

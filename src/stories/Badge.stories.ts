@@ -5,7 +5,7 @@ import './badge.css';
 import Badge from './Badge';
 
 const meta = {
-  title: 'Example/Badge',
+  title: 'Components/Badge',
   component: Badge,
   parameters: {
     layout: 'centered',
@@ -49,5 +49,19 @@ export const Info: Story = {
   args: {
     type: 'info',
     label: 'Info Badge',
+  },
+};
+
+export const NeutralLight: Story = {
+  args: {
+    type: 'neutral-light',
+    label: 'Neutral Light Badge',
+  },
+};
+
+export const NeutralDarkAlpha: Story = {
+  args: {
+    type: 'neutral-dark-alpha',
+    label: 'Neutral Dark Alpha Badge',
   },
 };

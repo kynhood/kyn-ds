@@ -4,7 +4,7 @@ import './checkbox.css';
 import Checkbox from './Checkbox';
 
 const meta = {
-  title: 'Example/Checkbox',
+  title: 'Components/Checkbox',
   component: Checkbox,
   parameters: {
     layout: 'centered',

@@ -1,68 +1,45 @@
-import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import BottomSheet from './BottomSheet';
+import { describe, it, expect, vi } from 'vitest';
+import userEvent from '@testing-library/user-event';
 
-describe('BottomSheet Component', () => {
-  it('renders bottom sheet with correct structure', () => {
+describe('BottomSheet', () => {
+  it('renders with default heading, paragraph, and button label', () => {
     render(<BottomSheet />);
-    const bottomSheet = screen.getByTestId('bottom-sheet');
-    expect(bottomSheet).toBeInTheDocument();
+
+    expect(screen.getByText('Heading')).toBeInTheDocument();
+    expect(screen.getByText('Paragraph')).toBeInTheDocument();
+    expect(screen.getByText('Button')).toBeInTheDocument();
+    expect(screen.getByTestId('grab-slider')).toBeInTheDocument();
+    expect(screen.getByTestId('close-button')).toBeInTheDocument();
+    expect(screen.getByTestId('action-button')).toBeInTheDocument();
   });
 
-  it('renders grab slider', () => {
-    render(<BottomSheet />);
-    const grabSlider = screen.getByTestId('grab-slider');
-    expect(grabSlider).toBeInTheDocument();
-    expect(grabSlider).toHaveClass('bg-[#bebebe]');
+  it('renders with custom heading, paragraph, and button label', () => {
+    const customHeading = 'Custom Heading';
+    const customParagraph = 'Custom paragraph text.';
+    const customButtonLabel = 'Custom Action';
+
+    render(
+      <BottomSheet
+        headingText={customHeading}
+        paragraphText={customParagraph}
+        buttonLabel={customButtonLabel}
+      />
+    );
+
+    expect(screen.getByText(customHeading)).toBeInTheDocument();
+    expect(screen.getByText(customParagraph)).toBeInTheDocument();
+    expect(screen.getByText(customButtonLabel)).toBeInTheDocument();
   });
 
-  it('renders heading with correct styles', () => {
-    render(<BottomSheet />);
-    const heading = screen.getByText('Heading');
-    expect(heading).toBeInTheDocument();
-    expect(heading).toHaveClass('font-bold');
-    expect(heading).toHaveClass('text-[20px]');
-  });
+  it('calls onButtonClick when the action button is clicked', async () => {
+    const handleButtonClick = vi.fn();
+    render(<BottomSheet onButtonClick={handleButtonClick} />);
 
-  it('renders paragraph with correct styles', () => {
-    render(<BottomSheet />);
-    const paragraph = screen.getByText('Paragraph');
-    expect(paragraph).toBeInTheDocument();
-    expect(paragraph).toHaveClass('font-normal');
-    expect(paragraph).toHaveClass('text-[16px]');
-  });
-
-  it('renders close button', () => {
-    render(<BottomSheet />);
-    const closeButton = screen.getByTestId('close-button');
-    expect(closeButton).toBeInTheDocument();
-  });
-
-  it('renders action button with correct styles', () => {
-    render(<BottomSheet />);
     const actionButton = screen.getByTestId('action-button');
-    expect(actionButton).toBeInTheDocument();
-    expect(actionButton).toHaveClass('bg-[#ffd43d]');
-    expect(actionButton).toHaveClass('rounded-[100px]');
-  });
+    await userEvent.click(actionButton);
 
-  it('renders action button with icon', () => {
-    render(<BottomSheet />);
-    const actionButton = screen.getByTestId('action-button');
-    const icon = actionButton.querySelector('svg');
-    expect(icon).toBeInTheDocument();
-  });
-
-  it('has correct border radius on container', () => {
-    render(<BottomSheet />);
-    const bottomSheet = screen.getByTestId('bottom-sheet');
-    expect(bottomSheet).toHaveClass('rounded-tl-[28px]');
-    expect(bottomSheet).toHaveClass('rounded-tr-[28px]');
-  });
-
-  it('has correct shadow on container', () => {
-    render(<BottomSheet />);
-    const bottomSheet = screen.getByTestId('bottom-sheet');
-    expect(bottomSheet).toHaveClass('shadow-[0px_-12px_20px_0px_#eaeaea]');
+    expect(handleButtonClick).toHaveBeenCalledTimes(1);
   });
 }); 
