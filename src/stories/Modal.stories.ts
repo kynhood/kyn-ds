@@ -4,7 +4,7 @@ import './modal.css';
 import Modal from './Modal';
 
 const meta = {
-  title: 'Example/Modal',
+  title: 'Components/Modal',
   component: Modal,
   parameters: {
     layout: 'centered',

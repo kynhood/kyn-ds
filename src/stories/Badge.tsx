@@ -3,7 +3,7 @@ import { CloseCircle, CheckCircle, InfoCircle, DangerTriangle } from "@solar-ico
 import "./badge.css";
 
 export interface BadgeProps {
-  type?: "error" | "warning" | "success" | "info";
+  type?: "error" | "warning" | "success" | "info" | "neutral-light" | "neutral-dark-alpha";
   label: string;
 }
 
@@ -18,19 +18,25 @@ export default function Badge({
       "badge-warning": type === "warning",
       "badge-success": type === "success",
       "badge-info": type === "info",
+      "badge-neutral-light": type === "neutral-light",
+      "badge-neutral-dark-alpha": type === "neutral-dark-alpha",
     }
   );
 
   const IconComponent = () => {
     switch (type) {
       case "error":
-        return <CloseCircle size={12} />; /* Using size from Figma for text-size/regular/paragraph/small */
+        return <CloseCircle className="badge-icon" />;
       case "warning":
-        return <DangerTriangle size={12} />;
+        return <DangerTriangle className="badge-icon" />;
       case "success":
-        return <CheckCircle size={12} />;
+        return <CheckCircle className="badge-icon" />;
       case "info":
-        return <InfoCircle size={12} />;
+        return <InfoCircle className="badge-icon" />;
+      case "neutral-light":
+        return <InfoCircle className="badge-icon" />;
+      case "neutral-dark-alpha":
+        return <InfoCircle className="badge-icon" />;
       default:
         return null;
     }

@@ -20,6 +20,11 @@
   justify-content: center;
 }
 
+.badge-icon {
+  width: 16px;
+  height: 16px;
+}
+
 /* Type-specific styles */
 .badge-error {
   background-color: var(--color-accent-color-red-red-100); /* accent-color/red/red-100 */
@@ -39,4 +44,15 @@
 .badge-info {
   background-color: var(--color-accent-color-blue-blue-100); /* accent-color/blue/blue-100 */
   color: var(--color-accent-color-blue-blue-900); /* accent-color/blue/blue-900 */
+}
+
+.badge-neutral-light {
+  background-color: var(--color-neutral-color-dark-dark-50); /* neutral-color/dark/dark-50 */
+  color: var(--color-neutral-color-dark-dark-900); /* neutral-color/dark/dark-900 */
+}
+
+.badge-neutral-dark-alpha {
+  background-color: var(--color-neutral-color-dark-dark-alpha-500); /* neutral-color/dark/dark-alpha-500 */
+  color: var(--color-neutral-color-gray-gray-50); /* neutral-color/gray/gray-50 */
+  backdrop-filter: blur(4px);
 } 

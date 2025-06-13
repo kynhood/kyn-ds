@@ -4,7 +4,7 @@ import './chips.css';
 import Chips from './Chips';
 
 const meta = {
-  title: 'Example/Chips',
+  title: 'Components/Chips',
   component: Chips,
   parameters: {
     layout: 'centered',
