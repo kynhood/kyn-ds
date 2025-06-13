@@ -1,0 +1,46 @@
+/* banner.css */
+
+.banner-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: var(--spacing-gaps-16px);
+  margin-bottom: var(--spacing-gaps-16px);
+  padding: var(--spacing-gaps-16px);
+  border-radius: var(--spacing-corner-radius-16px);
+  /* font-family: "Roboto", sans-serif; This line is removed to inherit Manrope */
+  font-size: var(--typography-typeface-size-regular-paragraph-large);
+  line-height: var(--typography-typeface-line-height-16-regular-paragraph);
+  font-weight: var(--typography-typeface-weight-regular);
+  font-family: var(--typography-typeface-family-manrope);
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-gaps-4px);
+  align-items: center;
+  justify-content: center;
+}
+
+
+.banner-error {
+  font-family: var(--typography-typeface-family-manrope), sans-serif;
+  background-color: var(--color-accent-color-red-red-50);
+  color: var(--color-accent-color-red-red-900);
+}
+
+.banner-warning {
+  background-color: var(--color-accent-color-orange-orange-50);
+  color: var(--color-accent-color-orange-orange-900);
+}
+
+.banner-success {
+  background-color: var(--color-accent-color-green-green-50);
+  color: var(--color-accent-color-green-green-900);
+}
+
+.banner-info {
+  background-color: var(--color-accent-color-blue-blue-50);
+  color: var(--color-accent-color-blue-blue-900);
+} 

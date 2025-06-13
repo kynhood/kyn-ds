@@ -1,0 +1,137 @@
+.bottom-sheet {
+  background-color: var(--color-neutral-color-gray-gray-50);
+  position: relative;
+  border-top-left-radius: var(--spacing-corner-radius-28px);
+  border-top-right-radius: var(--spacing-corner-radius-28px);
+  box-shadow: 0px -12px 20px 0px var(--color-neutral-color-dark-dark-50);
+  width: 396px;
+  height: 100%;
+}
+
+.bottom-sheet-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.bottom-sheet-grab-slider {
+  background-color: var(--color-neutral-color-dark-dark-100);
+  height: 4px;
+  border-radius: var(--spacing-corner-radius-100px);
+  flex-shrink: 0;
+  width: var(--spacing-gaps-64px);
+}
+
+.bottom-sheet-main-content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gaps-20px);
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding-bottom: var(--spacing-gaps-24px);
+  padding-top: var(--spacing-gaps-12px);
+  padding-left: var(--spacing-gaps-24px);
+  padding-right: var(--spacing-gaps-24px);
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.bottom-sheet-heading-wrapper {
+  flex-basis: 0;
+  font-family: var(--typography-typeface-family-manrope), sans-serif;
+  font-weight: var(--typography-typeface-weight-bold);
+  flex-grow: 1;
+  line-height: 0; /* This will be overridden by the p tag inside */
+  min-height: 1px;
+  min-width: 1px;
+  position: relative;
+  flex-shrink: 0;
+  color: var(--color-neutral-color-dark-dark-900);
+  font-size: var(--typography-typeface-size-semi-bold-label-large);
+  text-align: left;
+}
+
+.bottom-sheet-heading-wrapper p {
+  line-height: var(--typography-typeface-line-height-20-bold-heading);
+}
+
+.bottom-sheet-paragraph-wrapper {
+  font-family: var(--typography-typeface-family-manrope), sans-serif;
+  font-weight: var(--typography-typeface-weight-regular);
+  line-height: 0; /* This will be overridden by the p tag inside */
+  position: relative;
+  flex-shrink: 0;
+  color: var(--color-neutral-color-dark-dark-900);
+  font-size: var(--typography-typeface-size-regular-paragraph-large);
+  text-align: left;
+  width: 100%;
+}
+
+.bottom-sheet-paragraph-wrapper p {
+  line-height: var(--typography-typeface-line-height-16-regular-paragraph);
+}
+
+.bottom-sheet-button-container {
+  background-color: var(--color-primary-color-yellow-yellow-500);
+  position: relative;
+  border-radius: var(--spacing-corner-radius-100px);
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.bottom-sheet-button-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.bottom-sheet-button-inner-wrapper {
+  gap: var(--spacing-gaps-8px);
+  padding-left: var(--spacing-gaps-32px);
+  padding-right: var(--spacing-gaps-32px);
+  padding-top: var(--spacing-gaps-16px);
+  padding-bottom: var(--spacing-gaps-16px);
+}
+
+.bottom-sheet-button-text {
+  font-family: var(--typography-typeface-family-manrope), sans-serif;
+  font-weight: var(--typography-typeface-weight-bold);
+  line-height: 0; /* This will be overridden by the p tag inside */
+  position: relative;
+  flex-shrink: 0;
+  color: var(--color-neutral-color-dark-dark-500);
+  font-size: var(--typography-typeface-size-semi-bold-label-large);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.bottom-sheet-button-text p {
+  line-height: var(--typography-typeface-line-height-20-bold-label);
+}
+
+.bottom-sheet-helper-icon {
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  width: var(--spacing-gaps-24px);
+  height: var(--spacing-gaps-24px);
+}
+
+.bottom-sheet-helper-icon svg {
+  position: absolute;
+  inset: 5.208%;
+  display: block;
+  width: 100%;
+  height: 100%;
+} 

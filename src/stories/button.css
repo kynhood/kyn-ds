@@ -1,0 +1,356 @@
+.storybook-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 0;
+  border-radius: var(--spacing-corner-radius-100px);
+  font-weight: var(--typography-typeface-weight-bold);
+  line-height: var(--typography-typeface-line-height-14-semibold-label);
+  font-family: var(--typography-typeface-family-manrope);
+  margin-top: var(--spacing-gaps-16px);
+  margin-bottom: var(--spacing-gaps-16px);
+  width: auto;
+  min-width: 0;
+  flex-grow: 0;
+  height: auto;
+  min-height: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Base Icon and Label Styles */
+.storybook-button__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.storybook-button__label {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Icon Gap Styles */
+.storybook-button__icon + .storybook-button__label {
+  margin-left: var(--spacing-gaps-8px);
+}
+.storybook-button__label + .storybook-button__icon {
+  margin-left: var(--spacing-gaps-8px);
+}
+
+/* Size Styles */
+.storybook-button--xsmall {
+  padding: var(--spacing-gaps-4px) var(--spacing-gaps-8px);
+  font-size: var(--typography-typeface-size-regular-paragraph-small);
+  font-family: var(--typography-typeface-family-manrope);
+  font-weight: var(--typography-typeface-weight-regular);
+  line-height: var(--typography-typeface-line-height-14-semibold-label);
+  border-radius: var(--spacing-corner-radius-100px);
+}
+
+.storybook-button--xsmall .storybook-button__icon:first-child {
+  margin-left: var(--spacing-gaps-0px);
+}
+.storybook-button--xsmall .storybook-button__icon:last-child {
+  margin-left: var(--spacing-gaps-4px);
+  margin-right: var(--spacing-gaps-0px);
+}
+
+.storybook-button--xsmall .storybook-button__icon {
+  width: var(--spacing-gaps-16px);
+  height: var(--spacing-gaps-16px);
+}
+.storybook-button--xsmall .storybook-button__icon svg {
+  width: var(--spacing-gaps-16px);
+  height: var(--spacing-gaps-16px);
+  display: block;
+}
+
+.storybook-button--small {
+  padding: var(--spacing-gaps-10px) var(--spacing-gaps-16px);
+  font-size: var(--typography-typeface-size-regular-paragraph-small);
+}
+
+.storybook-button--large {
+  padding: var(--spacing-gaps-16px) var(--spacing-gaps-32px);
+  font-size: var(--typography-typeface-size-semi-bold-label-large);
+  line-height: 24px;
+  height: 56px;
+}
+
+.storybook-button--large .storybook-button__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.storybook-button--large .storybook-button__label {
+  line-height: 24px;
+  font-size: 20px;
+}
+
+/* Combined Small and XSmall Icon Gap Adjustments */
+.storybook-button--small .storybook-button__icon + .storybook-button__label,
+.storybook-button--xsmall .storybook-button__icon + .storybook-button__label,
+.storybook-button--small .storybook-button__label + .storybook-button__icon,
+.storybook-button--xsmall .storybook-button__label + .storybook-button__icon {
+  margin-left: var(--spacing-gaps-4px) !important;
+}
+
+/* General Variant Styles */
+.storybook-button--outline {
+  background-color: transparent;
+  border: 1px solid;
+}
+
+.storybook-button--text {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* Primary Theme Styles */
+.storybook-button--primary {
+  background-color: var(--color-primary-color-yellow-yellow-500);
+  color: var(--color-neutral-color-dark-dark-500);
+  border-radius: var(--spacing-corner-radius-100px);
+  font-weight: var(typeface-size/semi-bold/label/large);
+}
+
+.storybook-button--primary:disabled {
+  background-color: var(--color-primary-color-yellow-yellow-alpha-500);
+  color: var(--color-neutral-color-dark-dark-400);
+  cursor: not-allowed;
+}
+
+/* Primary Theme - Outline Variant */
+.storybook-button--primary.storybook-button--outline {
+  background-color: transparent;
+  border-color: var(--color-primary-color-yellow-yellow-500);
+  color: var(--color-primary-color-yellow-yellow-500);
+}
+
+.storybook-button--primary.storybook-button--outline:disabled {
+  border-color: var(--color-primary-color-yellow-yellow-alpha-500);
+  color: var(--color-primary-color-yellow-yellow-200);
+}
+
+/* Primary Theme - Text Variant */
+.storybook-button--primary.storybook-button--text {
+  background-color: transparent;
+  color: var(--color-primary-color-yellow-yellow-500);
+}
+
+.storybook-button--primary.storybook-button--text:disabled {
+  color: var(--color-primary-color-yellow-yellow-200);
+}
+
+/* Primary Theme - Small Size */
+.storybook-button--primary.storybook-button--small {
+  padding: var(--spacing-gaps-8px) var(--spacing-gaps-16px);
+  font-size: var(--typography-typeface-size-semi-bold-label-small);
+  font-weight: var(--typography-typeface-weight-semi-bold);
+  line-height: var(--typography-typeface-line-height-14-semibold-label);
+}
+
+.storybook-button--primary.storybook-button--small:disabled {
+  background-color: var(--color-primary-color-yellow-yellow-alpha-500);
+  color: var(--color-neutral-color-dark-dark-400);
+  cursor: not-allowed;
+}
+
+/* Accent Theme Styles */
+.storybook-button--accent {
+  background-color: var(--color-neutral-color-dark-dark-500);
+  color: var(--color-neutral-color-gray-gray-50);
+  border-radius: var(--spacing-corner-radius-100px);
+}
+
+.storybook-button--accent:disabled {
+  background-color: var(--color-neutral-color-dark-dark-200);
+  color: var(--color-neutral-color-gray-gray-600);
+  cursor: not-allowed;
+}
+
+/* Accent Theme - Outline Variant */
+.storybook-button--accent.storybook-button--outline {
+  border-color: var(--color-neutral-color-dark-dark-500);
+  color: var(--color-neutral-color-dark-dark-500);
+}
+
+.storybook-button--accent.storybook-button--outline:disabled {
+  border-color: var(--color-neutral-color-dark-dark-200);
+  color: var(--color-neutral-color-gray-gray-600);
+}
+
+/* Accent Theme - Text Variant */
+.storybook-button--accent.storybook-button--text {
+  background-color: transparent;
+  color: var(--color-neutral-color-dark-dark-500);
+}
+
+.storybook-button--accent.storybook-button--text:disabled {
+  background-color: transparent;
+  color: #9f9f9f;
+}
+
+/* Accent Theme - Small Size */
+.storybook-button--accent.storybook-button--small {
+  padding: var(--spacing-gaps-8px) var(--spacing-gaps-16px);
+  font-size: var(--typography-typeface-size-semi-bold-label-small);
+  font-weight: var(--typography-typeface-weight-semi-bold);
+  line-height: var(--typography-typeface-line-height-14-semibold-label);
+}
+
+/* Accent Theme - Color Variants */
+.storybook-button--accent--blue {
+  background-color: #11b1ff;
+  color: var(--color-neutral-color-gray-gray-50);
+}
+
+.storybook-button--accent--blue:disabled {
+  color: #9f9f9f;
+}
+
+.storybook-button--accent--grey {
+  background-color: #e9e9e9;
+  color: #2e2e2e;
+}
+
+.storybook-button--accent--grey:disabled {
+  background-color: #9f9f9f;
+  color: #d4d4d4;
+}
+
+/* Accent Theme - Color Variants (Dark) */
+.storybook-button--accent--dark {
+  background-color: #2e2e2e;
+  color: #fdfdfd;
+}
+
+.storybook-button--accent--dark:disabled {
+  background-color: #9f9f9f;
+  color: #d4d4d4;
+}
+
+/* Accent Theme - Text Variant with Color */
+.storybook-button--accent.storybook-button--text.storybook-button--accent--blue {
+  background-color: transparent;
+  color: #11b1ff;
+}
+
+.storybook-button--accent.storybook-button--text.storybook-button--accent--blue:disabled {
+  color: #9f9f9f;
+}
+
+/* Accent Theme - Outline Variant with Color */
+.storybook-button--accent.storybook-button--outline.storybook-button--accent--blue {
+  background-color: transparent;
+  border-color: #11b1ff;
+  color: #11b1ff;
+}
+
+.storybook-button--accent.storybook-button--outline.storybook-button--accent--blue:disabled {
+  background-color: transparent;
+  border-color: #9f9f9f;
+  color: #9f9f9f;
+}
+
+/* Accent Theme - Outline Variant with Color (Grey) */
+.storybook-button--accent.storybook-button--outline.storybook-button--accent--grey {
+  background-color: transparent;
+  border-color: var(--color-neutral-color-gray-gray-800);
+  color: var(--color-neutral-color-gray-gray-800);
+}
+
+.storybook-button--accent.storybook-button--outline.storybook-button--accent--grey:disabled {
+  background-color: transparent;
+  border-color: var(--color-neutral-color-gray-gray-200);
+  color: var(--color-neutral-color-gray-gray-200);
+}
+
+/* Accent Theme - Filled Variant with Color */
+.storybook-button--accent.storybook-button--filled.storybook-button--accent--grey {
+  background-color: #e9e9e9;
+  color: #2e2e2e;
+}
+
+.storybook-button--accent.storybook-button--filled.storybook-button--accent--grey:disabled {
+  background-color: #9f9f9f;
+  color: #d4d4d4;
+}
+
+/* Accent Theme - Outline Variant with Color (Dark) */
+.storybook-button--accent.storybook-button--outline.storybook-button--accent--dark {
+  background-color: transparent;
+  border-color: var(--color-neutral-color-dark-dark-500);
+  color: var(--color-neutral-color-dark-dark-500);
+}
+
+.storybook-button--accent.storybook-button--outline.storybook-button--accent--dark:disabled {
+  background-color: transparent;
+  border-color: var(--color-neutral-color-dark-dark-200);
+  color: var(--color-neutral-color-dark-dark-200);
+}
+
+/* Blur Theme Styles */
+.storybook-button--blur {
+  background-color: rgba(19,19,19,0.5);
+  color: var(--color-neutral-color-gray-gray-50);
+  border-radius: var(--spacing-corner-radius-100px);
+  backdrop-filter: blur(10px);
+}
+
+.storybook-button--blur:disabled {
+  background-color: rgba(19,19,19,0.5);
+  color: #a5a5a5;
+  cursor: not-allowed;
+}
+
+/* Blur Theme - Outline Variant */
+.storybook-button--blur.storybook-button--outline {
+  background-color: transparent;
+  border: 1px solid rgba(19,19,19,0.5);
+  color: var(--color-neutral-color-dark-dark-500);
+}
+
+.storybook-button--blur.storybook-button--outline:disabled {
+  background-color: transparent;
+  border: 1px solid #a5a5a5;
+  color: #a5a5a5;
+}
+
+/* Blur Theme - Text Variant */
+.storybook-button--blur.storybook-button--text {
+  background-color: transparent;
+  border: none;
+  color: var(--color-neutral-color-dark-dark-500); /* Adjusted based on user's last edit */
+}
+
+.storybook-button--blur.storybook-button--text:disabled {
+  background-color: transparent;
+  border: none;
+  color: #a5a5a5;
+}
+
+/* Blur Theme - Small Size */
+.storybook-button--blur.storybook-button--small {
+  padding: var(--spacing-gaps-8px) var(--spacing-gaps-16px);
+  font-size: var(--typography-typeface-size-semi-bold-label-small);
+  font-weight: var(--typography-typeface-weight-semi-bold);
+  line-height: var(--typography-typeface-line-height-14-semibold-label);
+}
+
+/* Blur Theme - Outline Variant with Color (Dark) */
+.storybook-button--blur.storybook-button--outline.storybook-button--accent--dark {
+  background-color: transparent;
+  border-color: rgba(19,19,19,0.5);
+  color: var(--color-neutral-color-dark-dark-500);
+}
+
+.storybook-button--blur.storybook-button--outline.storybook-button--accent--dark:disabled {
+  background-color: transparent;
+  border-color: #a5a5a5;
+  color: #a5a5a5;
+}
+

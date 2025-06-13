@@ -1,0 +1,97 @@
+/* checkbox.css */
+
+.checkbox-container {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox-container input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-custom {
+  height: var(--spacing-gaps-20px);
+  width: var(--spacing-gaps-20px);
+  border-radius: var(--spacing-corner-radius-4px);
+  border: 1px solid var(--color-neutral-color-dark-dark-200); /* neutral-color/dark/dark-200 */
+  display: inline-block;
+  position: relative;
+  margin-right: var(--spacing-gaps-8px); /* Assuming a default gap for label */
+}
+
+.checkbox-container input:checked ~ .checkbox-custom {
+  background-color: var(--color-accent-color-blue-blue-500);
+  border-color: var(--color-accent-color-blue-blue-500);
+}
+
+.checkbox-custom:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkbox-custom:after {
+  display: block;
+}
+
+.checkbox-container .checkbox-custom:after {
+  left: var(--spacing-gaps-6px);
+  top: var(--spacing-gaps-2px);
+  width: var(--spacing-gaps-5px);
+  height: var(--spacing-gaps-10px);
+  border: solid var(--color-neutral-color-gray-gray-50);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Indeterminate state */
+.checkbox-indeterminate .checkbox-custom {
+  background-color: var(--color-accent-color-blue-blue-500); /* Accent blue, same as checked */
+  border-color: var(--color-accent-color-blue-blue-500); /* Accent blue, same as checked */
+}
+
+.checkbox-indeterminate .checkbox-custom:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: var(--spacing-gaps-4px); /* Adjust as needed */
+  top: var(--spacing-gaps-8px); /* Center the dash vertically */
+  width: var(--spacing-gaps-10px);
+  height: var(--spacing-gaps-2px); /* Thickness of the dash */
+  background-color: var(--color-neutral-color-gray-gray-50);
+  border: none;
+  transform: none; /* No rotation */
+}
+
+/* Disabled state */
+.checkbox-disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.checkbox-disabled .checkbox-custom {
+  /* neutral-olor/dark/dark-50 */
+  border-color: var(--color-neutral-color-dark-dark-200); /* neutral-color/dark/dark-200 */
+}
+
+.checkbox-disabled input:checked ~ .checkbox-custom {
+  background-color: var(--color-accent-color-blue-blue-200); /* accent-color/blue/blue-200 */
+  border-color: var(--color-accent-color-blue-blue-200);
+}
+
+/* Error state */
+.checkbox-error .checkbox-custom {
+  border-color: var(--color-accent-color-red-red-500); /* accent-color/red/red-500 */
+}
+
+.checkbox-label {
+  color: var(--color-neutral-color-dark-dark-500); /* Assuming default text color, could be from other variables if defined */
+  font-family: var(--typography-typeface-family-manrope), sans-serif; /* Assuming Manrope font based on other components */
+  font-size: var(--typography-typeface-size-regular-paragraph-medium); /* Adjust as needed */
+} 

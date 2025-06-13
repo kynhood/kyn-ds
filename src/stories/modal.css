@@ -1,0 +1,142 @@
+/* Modal.css */
+
+.modal-container {
+  background-color: var(--color-neutral-color-gray-gray-50); /* neutral-color/gray/gray-50 */
+  position: relative;
+  border-radius: var(--spacing-corner-radius-16px); /* corner-radius/16px */
+  width: 100%;
+  height: 100%;
+}
+
+.modal-inner-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-content-flex {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gaps-20px); /* gaps/20px */
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--spacing-gaps-20px); /* gaps/20px */
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.modal-heading-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gaps-8px); /* gaps/8px */
+  align-items: center;
+  justify-content: flex-start;
+  line-height: 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.modal-heading {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--typography-typeface-family-manrope);
+  font-weight: var(--typography-typeface-weight-bold);
+  height: 26px;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  color: var(--color-neutral-color-dark-dark-500); /* neutral-color/dark/dark-500 */
+  font-size: var(--typography-typeface-size-semi-bold-label-large); /* typeface-size/semi-bold/label/large */
+  width: 100%;
+}
+
+.modal-paragraph-wrapper {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--typography-typeface-family-manrope);
+  font-weight: var(--typography-typeface-weight-regular);
+  justify-content: center;
+  min-width: 100%;
+  position: relative;
+  flex-shrink: 0;
+  color: var(--color-neutral-color-dark-dark-400); /* neutral-color/dark/dark-400 */
+  font-size: var(--typography-typeface-size-regular-paragraph-medium); /* typeface-size/regular/paragraph/medium */
+  /* The original style had width: min-content, which is not directly convertible to flex. */
+}
+
+.modal-button-group {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.modal-button-group-inner-flex {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-gaps-12px); /* gaps/12px */
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+  position: relative;
+}
+
+/* ModalButtonText styles */
+.modal-button-text-container {
+  position: relative;
+  border-radius: var(--spacing-corner-radius-100px); /* corner-radius/100px */
+  flex-shrink: 0;
+}
+
+.modal-button-text-yellow-bg {
+  background-color: var(--color-primary-color-yellow-yellow-500); /* primary-color/yellow/yellow-500 */
+}
+
+.modal-button-text-inner-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-button-text-content-flex {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-gaps-4px); /* gaps/4px */
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-gaps-8px) var(--spacing-gaps-16px); /* gaps/8px and gaps/16px */
+  position: relative;
+}
+
+.modal-button-text-label {
+  font-family: var(--typography-typeface-family-manrope);
+  font-weight: var(--typography-typeface-weight-semi-bold);
+  line-height: 0;
+  position: relative;
+  flex-shrink: 0;
+  color: var(--color-neutral-color-dark-dark-500); /* neutral-color/dark/dark-500 */
+  font-size: var(--typography-typeface-size-semi-bold-label-small); /* typeface-size/semi-bold/label/small */
+  text-align: center;
+  white-space: nowrap;
+} 
