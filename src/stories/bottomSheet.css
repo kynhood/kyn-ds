@@ -1,21 +1,23 @@
 .bottom-sheet {
   background-color: var(--color-neutral-color-gray-gray-50);
   position: relative;
-  border-top-left-radius: var(--corner-radius-28px);
-  border-top-right-radius: var(--corner-radius-28px);
+  border-top-left-radius: var(--spacing-corner-radius-28px);
+  border-top-right-radius: var(--spacing-corner-radius-28px);
   box-shadow: 0px -12px 20px 0px var(--color-neutral-color-dark-dark-50);
-  width: 100%;
+  width: 100% ;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: var(--spacing-gaps-24px);
+  padding-right: var(--spacing-gaps-24px);
 }
 
 .bottom-sheet-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  
   height: 100%;
 }
 
@@ -27,21 +29,25 @@
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
-  padding: var(--spacing-gaps-12px) var(--spacing-gaps-24px) var(--spacing-gaps-24px) var(--spacing-gaps-24px);
   position: relative;
-  width: 100%;
+  width: 396px;
+  padding-right: var(--spacing-gaps-24px);
+  padding-left: var(--spacing-gaps-24px);
+  padding-top: var(--spacing-gaps-24px);
+  padding-bottom: var(--spacing-gaps-24px);
   height: 100%;
 }
 
 .bottom-sheet-grab-slider {
   background-color: var(--color-neutral-color-dark-dark-100);
-  height: var(--spacing-gaps-8px);
-  border-radius: var(--corner-radius-100px);
+  height: var(--spacing-gaps-4px);
+  border-radius: var(--spacing-corner-radius-100px);
   flex-shrink: 0;
-  width: var(--spacing-gaps-32px);
+  width: var(--spacing-gaps-64px);
+  margin-top: var(--spacing-gaps-12px);
 }
 
-.bottom-sheet-text-section {
+.bottom-sheet-text-section-wrapper {
   position: relative;
   flex-shrink: 0;
   width: 100%;
@@ -51,6 +57,18 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: 0;
+}
+
+.bottom-sheet-header-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gaps-32px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+  position: relative;
+  width: 100%;
 }
 
 .bottom-sheet-header {
@@ -70,24 +88,24 @@
   font-family: var(--typography-typeface-family-manrope);
   font-weight: var(--typography-typeface-weight-bold);
   flex-grow: 1;
-  line-height: var(--typography-typeface-line-height-20-bold-heading);
+  line-height: var(--typography-typeface-line-height-24-bold-heading);
   min-height: 1px;
   min-width: 1px;
   position: relative;
   flex-shrink: 0;
   color: var(--color-token-color-text-color-text-black);
-  font-size: var(--typography-typeface-size-semi-bold-label-large);
+  font-size: var(--typography-typeface-size-20-semi-bold-label-large);
   text-align: left;
 }
 
 .bottom-sheet-paragraph {
   font-family: var(--typography-typeface-family-manrope);
   font-weight: var(--typography-typeface-weight-regular);
-  line-height: var(--typography-typeface-line-height-16-regular-paragraph);
+  line-height: var(--typography-typeface-line-height-24-regular-paragraph);
   position: relative;
   flex-shrink: 0;
   color: var(--color-token-color-text-color-text-black);
-  font-size: var(--typography-typeface-size-regular-paragraph-large);
+  font-size: var(--typography-typeface-size-16-regular-paragraph-large);
   text-align: left;
   width: 100%;
 }
@@ -100,31 +118,21 @@
   height: var(--spacing-gaps-24px);
 }
 
-.bottom-sheet-icon-vector {
-  position: absolute;
-  inset: 5.208%;
-}
-
 .bottom-sheet-button {
-  background-color: var(--color-primary-color-yellow-yellow-500);
-  position: relative;
-  border-radius: var(--corner-radius-100px);
   flex-shrink: 0;
   width: 100%;
-  border: none; /* Remove default button border */
-  cursor: pointer; /* Indicate it's clickable */
 }
 
 .bottom-sheet-button-content {
   display: flex;
   flex-direction: row;
+  gap: var(--spacing-gaps-8px);
   align-items: center;
   justify-content: center;
   overflow: hidden;
   position: relative;
   width: 100%;
   height: 100%;
-  padding: var(--spacing-gaps-16px) var(--spacing-gaps-32px);
 }
 
 .bottom-sheet-button-icon {
@@ -138,11 +146,30 @@
 .bottom-sheet-button-label {
   font-family: var(--typography-typeface-family-manrope);
   font-weight: var(--typography-typeface-weight-bold);
-  line-height: var(--typography-typeface-line-height-20-bold-heading);
+  line-height: var(--typography-typeface-line-height-24-bold-heading);
   position: relative;
   flex-shrink: 0;
   color: var(--color-neutral-color-dark-dark-500);
-  font-size: var(--typography-typeface-size-semi-bold-label-large);
+  font-size: var(--typography-typeface-size-20-semi-bold-label-large);
   text-align: center;
-  white-space: pre; /* preserve white space for button label */
+  white-space: pre;
+}
+
+.bottom-sheet-text-and-button-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gaps-20px);
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: var(--spacing-gaps-24);
+  width: 100%;
+}
+
+.bottom-sheet-heading-and-paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gaps-16px);
 } 
