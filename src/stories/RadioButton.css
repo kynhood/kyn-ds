@@ -1,0 +1,29 @@
+@import '../styles/designTokens.css';
+
+.radio-button-container {
+  width: var(--spacing--gaps--24px);
+  height: var(--spacing--gaps--24px);
+  position: relative;
+}
+
+.radio-button-svg {
+  display: block;
+  width: var(catego--spacing-gaps-20px);
+  height: var(--spacing--gaps--20px);
+}
+
+.radio-button-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.radio-button-label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+} 

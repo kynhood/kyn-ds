@@ -77,16 +77,10 @@
 }
 
 .menu-item-icon {
-  overflow: hidden;
   position: relative;
   flex-shrink: 0;
   width: 16px;
   height: 16px;
-}
-
-.menu-item-icon-vector {
-  position: absolute;
-  inset: 5.208%;
 }
 
 .menu-item-text {

@@ -6,18 +6,18 @@ export interface CheckboxProps {
   label?: string;
   initialChecked?: boolean;
   disabled?: boolean;
-  error?: boolean;
   indeterminate?: boolean;
   onChange?: (checked: boolean) => void;
+  error?: boolean;
 }
 
 export default function Checkbox({
   label,
   initialChecked = false,
   disabled = false,
-  error = false,
   indeterminate = false,
   onChange,
+  error = false,
 }: CheckboxProps) {
   const [isChecked, setIsChecked] = useState(initialChecked);
   const checkboxRef = React.useRef<HTMLInputElement>(null);

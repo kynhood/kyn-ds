@@ -1,0 +1,102 @@
+.input-text-field-container {
+  width: 396px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gaps-12px);
+}
+
+.input-wrapper {
+  background-color: var(--color-neutral-color-gray-gray-50);
+  height: 69px;
+  border-radius: var(--spacing-corner-radius-12px);
+  border: 1px solid var(--color-neutral-color-dark-dark-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.input-content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gaps-8px); /* Corrected gap between heading and input */
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--spacing-gaps-12px) var(--spacing-gaps-20px); /* Adjust padding based on Figma */
+  width: 100%;
+}
+
+.heading-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.heading {
+  font-family: var(--typography-typeface-family-manrope), sans-serif;
+  font-weight: var(--typography-typeface-weight-bold);
+  font-size: var(--typography-typeface-size-semi-bold-label-large);
+  line-height: var(--typography-typeface-line-height-20-bold-label);
+  text-align: left;
+  color: var(--color-neutral-color-dark-dark-500); /* Default text color */
+  white-space: nowrap;
+}
+
+.text-input {
+  font-family: var(--typography-typeface-family-manrope), sans-serif;
+  font-weight: var(--typography-typeface-weight-bold);
+  font-size: var(--typography-typeface-size-semi-bold-label-large);
+  line-height: var(--typography-typeface-line-height-20-bold-label);
+  color: var(--color-neutral-color-dark-dark-500); /* Default text color */
+  border: none;
+  background: transparent;
+  width: 100%;
+  padding: 0;
+}
+
+.text-input:focus {
+  outline: none;
+}
+
+.help-counter-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-gaps-4px); /* Gap between help text and counter */
+  align-items: center;
+  justify-content: space-between; /* Space between help text and counter */
+  width: 100%;
+}
+
+.help-text-group {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-gaps-4px); /* Gap between icon and text */
+  align-items: center;
+}
+
+.info-circle {
+  width: var(--spacing-gaps-16px);
+  height: var(--spacing-gaps-16px);
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.info-circle-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.help-text,
+.counter {
+  font-family: var(--typography-typeface-family-manrope), sans-serif;
+  font-weight: var(--typography-typeface-weight-regular);
+  font-size: var(--typography-typeface-size-regular-paragraph-small);
+  line-height: var(--typography-typeface-line-height-12-regular-paragraph);
+  color: var(--color-neutral-color-dark-dark-500); /* Default text color */
+  text-align: left;
+  white-space: pre; /* For counter specifically */
+} 
