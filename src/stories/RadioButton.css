@@ -8,7 +8,7 @@
 
 .radio-button-svg {
   display: block;
-  width: var(catego--spacing-gaps-20px);
+  width: var(--spacing--gaps--20px);
   height: var(--spacing--gaps--20px);
 }
 
@@ -26,4 +26,4 @@
   width: 100%;
   height: 100%;
   cursor: pointer;
-} 
+}
