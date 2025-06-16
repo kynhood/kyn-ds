@@ -43,7 +43,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-gaps-8px); /* gaps/8px */
+  gap: var(--spacing-gaps-16px); /* Add gap between title and paragraph */
   align-items: center;
   justify-content: flex-start;
   line-height: 0;
@@ -140,4 +140,4 @@
   font-size: var(--typography-typeface-size-semi-bold-label-small); /* typeface-size/semi-bold/label/small */
   text-align: center;
   white-space: nowrap;
-} 
+}

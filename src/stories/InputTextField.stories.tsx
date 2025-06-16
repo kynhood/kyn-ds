@@ -1,37 +1,31 @@
+// Storybook story for the InputTextField component
+// Only UI controls and documentation, no business logic is changed
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import InputTextField from './InputTextField';
 
+// Storybook metadata and controls for InputTextField
 const meta = {
-  title: 'Components/Input Text Field',
-  component: InputTextField,
+  title: 'Components/Input Text Field', // Storybook sidebar title
+  component: InputTextField, // The component to document
   tags: ['autodocs'],
   argTypes: {
+    // State of the input text field
     state: {
       options: ['inactive', 'active', 'disabled', 'error'],
       control: { type: 'radio' },
       description: 'The state of the input text field.',
     },
-    heading: {
-      control: 'text',
-      description: 'The main heading/label for the input field.',
-    },
-    helpText: {
-      control: 'text',
-      description: 'Optional help text displayed below the input field.',
-    },
-    counter: {
-      control: 'text',
-      description: 'Optional character counter displayed below the input field.',
-    },
-    value: {
-      control: 'text',
-      description: 'The current value of the input field.',
-    },
-    onChange: {
-      action: 'changed',
-      description: 'Callback function triggered when the input value changes.',
-    },
+    // Main heading/label for the input field
+    heading: { control: 'text', description: 'The main heading/label for the input field.' },
+    // Optional help text
+    helpText: { control: 'text', description: 'Optional help text displayed below the input field.' },
+    // Optional character counter
+    counter: { control: 'text', description: 'Optional character counter displayed below the input field.' },
+    // Current value of the input field
+    value: { control: 'text', description: 'The current value of the input field.' },
+    // Callback for value change
+    onChange: { action: 'changed', description: 'Callback function triggered when the input value changes.' },
   },
 } satisfies Meta<typeof InputTextField>;
 
@@ -84,4 +78,4 @@ export const Error: Story = {
     counter: '101/100',
     value: 'Error text',
   },
-}; 
+};

@@ -1,23 +1,23 @@
+// Storybook story for the Badge component
+// Only UI controls and documentation, no business logic is changed
 import type { Meta, StoryObj } from '@storybook/react';
 import { within, expect } from '@storybook/test';
 import '../styles/designTokens.css';
 import './badge.css';
-
 import Badge from './Badge';
 
+// Storybook metadata and controls for Badge
 const meta = {
-  title: 'Components/Badge',
-  component: Badge,
-  parameters: {
-    layout: 'centered',
-  },
+  title: 'Components/Badge', // Storybook sidebar title
+  component: Badge, // The component to document
+  parameters: { layout: 'centered' },
   tags: ['autodocs'],
   argTypes: {
+    // Badge type (color/intent)
     type: {
-      control: {
-        type: 'radio',
-      },
+      control: { type: 'radio' },
       options: ['error', 'warning', 'success', 'info'],
+      description: 'Badge type (error, warning, success, info)',
     },
   },
 } satisfies Meta<typeof Badge>;
@@ -25,26 +25,28 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+// Error badge story
 export const Error: Story = {
   args: {
     type: 'error',
     label: 'Error Badge',
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
-    const badge = canvas.getByText('Error Badge');
+    const badge = canvas.getByText(args.label);
     await expect(badge).toBeInTheDocument();
   },
 };
 
+// Warning badge story
 export const Warning: Story = {
   args: {
     type: 'warning',
     label: 'Warning Badge',
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
-    const badge = canvas.getByText('Warning Badge');
+    const badge = canvas.getByText(args.label);
     await expect(badge).toBeInTheDocument();
   },
 };
@@ -54,9 +56,9 @@ export const Success: Story = {
     type: 'success',
     label: 'Success Badge',
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
-    const badge = canvas.getByText('Success Badge');
+    const badge = canvas.getByText(args.label);
     await expect(badge).toBeInTheDocument();
   },
 };
@@ -66,9 +68,9 @@ export const Info: Story = {
     type: 'info',
     label: 'Info Badge',
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
-    const badge = canvas.getByText('Info Badge');
+    const badge = canvas.getByText(args.label);
     await expect(badge).toBeInTheDocument();
   },
 };

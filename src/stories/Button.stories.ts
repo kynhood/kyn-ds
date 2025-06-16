@@ -1,35 +1,37 @@
+// Storybook story for the Button component
+// Only UI controls and documentation, no business logic is changed
 import type { Meta, StoryObj } from "@storybook/react";
 import './button.css';
 import { within, expect } from '@storybook/test';
-
 import { Button } from "./Button";
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+// Storybook metadata and controls for Button
 const meta = {
-  title: "Components/Button",
-  component: Button,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: "centered",
-  },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
+  title: "Components/Button", // Storybook sidebar title
+  component: Button, // The component to document
+  parameters: { layout: "centered" },
   tags: ["autodocs"],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    // backgroundColor: { control: "color" },
-    size: { control: 'radio', options: ['xsmall', 'small', 'large'] },
-    disabled: { control: 'boolean' },
-    leadingIcon: { control: 'boolean' },
-    trailingIcon: { control: 'boolean' },
-    theme: { control: 'radio', options: ['primary', 'accent', 'blur'] },
-    variant: { control: 'radio', options: ['filled', 'outline', 'text'] },
+    // Button size
+    size: { control: 'radio', options: ['xsmall', 'small', 'large'], description: 'Button size' },
+    // Disabled state
+    disabled: { control: 'boolean', description: 'Disable the button' },
+    // Show leading icon
+    leadingIcon: { control: 'boolean', description: 'Show leading icon' },
+    // Show trailing icon
+    trailingIcon: { control: 'boolean', description: 'Show trailing icon' },
+    // Button theme
+    theme: { control: 'radio', options: ['primary', 'accent', 'blur'], description: 'Button theme' },
+    // Button variant
+    variant: { control: 'radio', options: ['filled', 'outline', 'text'], description: 'Button variant' },
+    // Button color (only for accent theme)
     color: {
       control: { type: "select" },
       options: ["blue", "grey", "dark"],
       if: { arg: "theme", eq: "accent" },
+      description: 'Button color (for accent theme only)',
     },
   },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { leadingIcon: true, color: "grey" },
 } satisfies Meta<typeof Button>;
 
@@ -49,9 +51,10 @@ export const Primary: Story = {
   argTypes: {
     disabled: { control: 'boolean' },
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
-    const button = canvas.getByRole('button', { name: "Button" });
+    // Use label from args for robust test
+    const button = canvas.getByRole('button', { name: args.label ?? '' });
     await expect(button).toBeInTheDocument();
   },
 };
@@ -75,9 +78,9 @@ export const Accent: Story = {
       ],
     },
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
-    const button = canvas.getByRole('button', { name: "Button" });
+    const button = canvas.getByRole('button', { name: args.label ?? '' });
     await expect(button).toBeInTheDocument();
   },
 };
@@ -99,9 +102,9 @@ export const Blur: Story = {
       ],
     },
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
-    const button = canvas.getByRole('button', { name: "Button" });
+    const button = canvas.getByRole('button', { name: args.label ?? '' });
     await expect(button).toBeInTheDocument();
   },
 };
