@@ -1,111 +1,20 @@
 /* Import Manrope font */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap');
+@import './styles/designTokens.css';
 
 :root {
   font-family: var(--typography-typeface-family-manrope);
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: var(--typography-typeface-weight-regular);
 
   color-scheme: light;
   color: #213547;
-  background-color: #ffffff;
+  background-color: var(--color-neutral-color-gray-gray-50);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /* Brand Colors */
-  --color-brand-alpha-50: #fde9ea80;
-  --color-brand-alpha-900: #63101380;
-  --color-brand-alpha-500: #eb252d80;
-  --color-brand-50: #fde9eaff;
-  --color-brand-100: #f9bbbeff;
-  --color-brand-200: #f69b9eff;
-  --color-brand-300: #f26d72ff;
-  --color-brand-400: #ef5157ff;
-  --color-brand-500: #eb252dff;
-  --color-brand-600: #d62229ff;
-  --color-brand-700: #a71a20ff;
-  --color-brand-800: #811419ff;
-  --color-brand-900: #631013ff;
-
-  /* Primary Colors */
-  --color-yellow-alpha-50: #fffbec80;
-  --color-yellow-alpha-500: #ffd43d80;
-  --color-yellow-alpha-900: #6b591a80;
-  --color-yellow-50: #fffbecff;
-  --color-yellow-100: #fff2c3ff;
-  --color-yellow-200: #ffeba6ff;
-  --color-yellow-300: #ffe27dff;
-  --color-yellow-400: #ffdd64ff;
-  --color-yellow-500: #ffd43dff;
-  --color-yellow-600: #e8c138ff;
-  --color-yellow-700: #b5972bff;
-  --color-yellow-800: #8c7522ff;
-  --color-yellow-900: #6b591aff;
-
-  /* Accent Colors */
-  --color-red-alpha-50: #ffe7e880;
-  --color-red-alpha-500: #ff111580;
-  --color-red-alpha-900: #6b070980;
-  --color-red-50: #ffe7e8ff;
-  --color-red-100: #ffb5b6ff;
-  --color-red-200: #ff9293ff;
-  --color-red-300: #ff6062ff;
-  --color-red-400: #ff4144ff;
-  --color-red-500: #ff1115ff;
-  --color-red-600: #e80f13ff;
-  --color-red-700: #b50c0fff;
-  --color-red-800: #8c090cff;
-  --color-red-900: #6b0709ff;
-
-  /* Typography */
-  --typography-typeface-family-manrope: 'Manrope';
-  --typography-typeface-weight-regular: 400;
-  --typography-typeface-weight-semi-bold: 600;
-  --typography-typeface-weight-bold: 700;
-  --typography-typeface-size-regular-paragraph-small: 12px;
-  --typography-typeface-size-regular-paragraph-medium: 14px;
-  --typography-typeface-size-regular-paragraph-large: 16px;
-  --typography-typeface-line-height-12-regular-paragraph: 14.4px;
-
-  /* Spacing */
-  --spacing-gaps-0: 0px;
-  --spacing-gaps-2: 2px;
-  --spacing-gaps-4: 4px;
-  --spacing-gaps-8: 8px;
-  --spacing-gaps-12: 12px;
-  --spacing-gaps-16: 16px;
-  --spacing-gaps-20: 20px;
-  --spacing-gaps-24: 24px;
-  --spacing-gaps-28: 28px;
-  --spacing-gaps-32: 32px;
-  --spacing-gaps-36: 36px;
-  --spacing-gaps-40: 40px;
-  --spacing-gaps-48: 48px;
-  --spacing-gaps-56: 56px;
-  --spacing-gaps-64: 64px;
-  --spacing-gaps-72: 72px;
-
-  /* Corner Radius */
-  --spacing-corner-radius-0: 0px;
-  --spacing-corner-radius-4: 4px;
-  --spacing-corner-radius-8: 8px;
-  --spacing-corner-radius-12: 12px;
-  --spacing-corner-radius-16: 16px;
-  --spacing-corner-radius-28: 28px;
-  --spacing-corner-radius-100: 100px;
-
-  /* Accent Colors */
-  --color-accent-red-red-100: #ffb5b6ff;
-  --color-accent-red-red-900: #6b0709ff;
-  --color-accent-orange-orange-100: #ffe7c7ff;
-  --color-accent-orange-orange-900: #6b4a1fff;
-  --color-accent-green-green-100: #d3e6d2ff;
-  --color-accent-green-green-900: #2f492fff;
-  --color-accent-blue-blue-100: #b5e7ffff;
-  --color-accent-blue-blue-900: #074a6bff;
 }
 
 /* Reset default styles */
@@ -136,7 +45,7 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
+  border-radius: var(--spacing-corner-radius-8);
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;

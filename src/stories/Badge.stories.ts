@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { within, expect } from '@storybook/test';
 import '../styles/designTokens.css';
 import './badge.css';
 
@@ -29,12 +30,22 @@ export const Error: Story = {
     type: 'error',
     label: 'Error Badge',
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const badge = canvas.getByText('Error Badge');
+    await expect(badge).toBeInTheDocument();
+  },
 };
 
 export const Warning: Story = {
   args: {
     type: 'warning',
     label: 'Warning Badge',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const badge = canvas.getByText('Warning Badge');
+    await expect(badge).toBeInTheDocument();
   },
 };
 
@@ -43,12 +54,22 @@ export const Success: Story = {
     type: 'success',
     label: 'Success Badge',
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const badge = canvas.getByText('Success Badge');
+    await expect(badge).toBeInTheDocument();
+  },
 };
 
 export const Info: Story = {
   args: {
     type: 'info',
     label: 'Info Badge',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const badge = canvas.getByText('Info Badge');
+    await expect(badge).toBeInTheDocument();
   },
 };
 
@@ -57,11 +78,21 @@ export const NeutralLight: Story = {
     type: 'neutral-light',
     label: 'Neutral Light Badge',
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const badge = canvas.getByText('Neutral Light Badge');
+    await expect(badge).toBeInTheDocument();
+  },
 };
 
 export const NeutralDarkAlpha: Story = {
   args: {
     type: 'neutral-dark-alpha',
     label: 'Neutral Dark Alpha Badge',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const badge = canvas.getByText('Neutral Dark Alpha Badge');
+    await expect(badge).toBeInTheDocument();
   },
 };

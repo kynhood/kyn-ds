@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { within, expect } from '@storybook/test';
 import './chips.css';
 
 import Chips from './Chips';
@@ -25,6 +26,11 @@ export const Inactive: Story = {
     label: 'Kyn Events',
     disabled: false,
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const chip = canvas.getByText('Kyn Events');
+    await expect(chip).toBeInTheDocument();
+  },
 };
 
 export const Active: Story = {
@@ -32,11 +38,21 @@ export const Active: Story = {
     label: 'Active Chip',
     disabled: false,
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const chip = canvas.getByText('Active Chip');
+    await expect(chip).toBeInTheDocument();
+  },
 };
 
 export const Disabled: Story = {
   args: {
     label: 'Disabled Chip',
     disabled: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const chip = canvas.getByText('Disabled Chip');
+    await expect(chip).toBeInTheDocument();
   },
 };

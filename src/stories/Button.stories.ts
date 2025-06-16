@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import './button.css';
+import { within, expect } from '@storybook/test';
 
 import { Button } from "./Button";
 
@@ -48,6 +49,11 @@ export const Primary: Story = {
   argTypes: {
     disabled: { control: 'boolean' },
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button', { name: "Button" });
+    await expect(button).toBeInTheDocument();
+  },
 };
 
 export const Accent: Story = {
@@ -69,6 +75,11 @@ export const Accent: Story = {
       ],
     },
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button', { name: "Button" });
+    await expect(button).toBeInTheDocument();
+  },
 };
 
 export const Blur: Story = {
@@ -87,5 +98,10 @@ export const Blur: Story = {
         { name: 'Disabled Dark Alpha', value: 'rgba(19,19,19,0.5)' },
       ],
     },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button', { name: "Button" });
+    await expect(button).toBeInTheDocument();
   },
 };

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { within, expect } from '@storybook/test';
 import './checkbox.css';
 
 import Checkbox from './Checkbox';
@@ -47,6 +48,11 @@ export const Default: Story = {
     error: false,
     indeterminate: false,
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const checkbox = canvas.getByLabelText('Checkbox');
+    await expect(checkbox).toBeInTheDocument();
+  },
 };
 
 export const Checked: Story = {
@@ -56,6 +62,12 @@ export const Checked: Story = {
     disabled: false,
     error: false,
     indeterminate: false,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const checkbox = canvas.getByLabelText('Checked Checkbox');
+    await expect(checkbox).toBeInTheDocument();
+    await expect(checkbox).toBeChecked();
   },
 };
 
@@ -67,6 +79,12 @@ export const Disabled: Story = {
     error: false,
     indeterminate: false,
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const checkbox = canvas.getByLabelText('Disabled Checkbox');
+    await expect(checkbox).toBeInTheDocument();
+    await expect(checkbox).toBeDisabled();
+  },
 };
 
 export const Indeterminate: Story = {
@@ -76,6 +94,14 @@ export const Indeterminate: Story = {
     disabled: false,
     error: false,
     indeterminate: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const checkbox = canvas.getByLabelText('Indeterminate Checkbox');
+    await expect(checkbox).toBeInTheDocument();
+    // Storybook's @storybook/test does not directly support checking for indeterminate state.
+    // You might need a custom matcher or a different assertion library if this is critical.
+    // For now, we'll just check for document presence.
   },
 };
 
@@ -87,6 +113,13 @@ export const CheckedAndDisabled: Story = {
     error: false,
     indeterminate: false,
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const checkbox = canvas.getByLabelText('Checked and Disabled');
+    await expect(checkbox).toBeInTheDocument();
+    await expect(checkbox).toBeChecked();
+    await expect(checkbox).toBeDisabled();
+  },
 };
 
 export const Error: Story = {
@@ -96,5 +129,11 @@ export const Error: Story = {
     disabled: false,
     error: true,
     indeterminate: false,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const checkbox = canvas.getByLabelText('Error Checkbox');
+    await expect(checkbox).toBeInTheDocument();
+    await expect(checkbox).toHaveClass('error'); // Assuming an 'error' class for styling
   },
 };

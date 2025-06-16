@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { within, expect } from '@storybook/test';
 import '../styles/designTokens.css';
 import './banner.css';
 
@@ -29,12 +30,22 @@ export const Error: Story = {
     type: 'error',
     message: "This is a dummy text used in the\nbanner component",
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const banner = canvas.getByText("This is a dummy text used in the banner component");
+    await expect(banner).toBeInTheDocument();
+  },
 };
 
 export const Warning: Story = {
   args: {
     type: 'warning',
     message: "This is a dummy text used in the\nbanner component",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const banner = canvas.getByText("This is a dummy text used in the banner component");
+    await expect(banner).toBeInTheDocument();
   },
 };
 
@@ -43,11 +54,21 @@ export const Success: Story = {
     type: 'success',
     message: "This is a dummy text used in the \nbanner component",
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const banner = canvas.getByText("This is a dummy text used in the banner component");
+    await expect(banner).toBeInTheDocument();
+  },
 };
 
 export const Info: Story = {
   args: {
     type: 'info',
     message: "This is a dummy text used in the \nbanner component",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const banner = canvas.getByText("This is a dummy text used in the banner component");
+    await expect(banner).toBeInTheDocument();
   },
 };
