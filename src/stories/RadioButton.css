@@ -1,15 +1,15 @@
 @import '../styles/designTokens.css';
 
 .radio-button-container {
-  width: var(--spacing--gaps--24px);
-  height: var(--spacing--gaps--24px);
+  width: var(--spacing-gaps-24px);
+  height: var(--spacing-gaps-24px);
   position: relative;
 }
 
 .radio-button-svg {
   display: block;
-  width: var(--spacing--gaps--20px);
-  height: var(--spacing--gaps--20px);
+  width: var(--spacing-gaps-20px);
+  height: var(--spacing-gaps-20px);
 }
 
 .radio-button-input {
