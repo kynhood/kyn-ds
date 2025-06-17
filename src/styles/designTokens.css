@@ -148,11 +148,17 @@
   --typography-typeface-weight-regular: 400;
   --typography-typeface-weight-semi-bold: 600;
   --typography-typeface-weight-bold: 700;
-  --typography-typeface-size-regular-paragraph-small: 14px;
-  --typography-typeface-size-regular-paragraph-medium: 16px;
+
+  --typography-typeface-size-regular-paragraph-small: 12px;
+  --typography-typeface-size-regular-paragraph-medium: 14px;
   --typography-typeface-size-regular-paragraph-large: 16px;
   --typography-typeface-size-semi-bold-label-small: 14px;
+  --typography-typeface-size-semi-bold-label-medium: 16px;
   --typography-typeface-size-semi-bold-label-large: 20px;
+  --typography-typeface-size-bold-label-small: 20px;
+  --typography-typeface-size-bold-label-medium: 24px;
+  --typography-typeface-size-bold-label-large: 32px;
+
   --typography-typeface-line-height-12-regular-paragraph: 18px;
   --typography-typeface-line-height-14-semibold-label: 21px;
   --typography-typeface-line-height-16-regular-paragraph: 24px;
@@ -172,7 +178,10 @@
   --spacing-gaps-28px: 28px;
   --spacing-gaps-32px: 32px;
   --spacing-gaps-64px: 64px;
+  --spacing-corner-radius-0px: 0px;
   --spacing-corner-radius-4px: 4px;
+  --spacing-corner-radius-8px: 8px;
+  --spacing-corner-radius-12px: 12px;
   --spacing-corner-radius-16px: 16px;
   --spacing-corner-radius-28px: 28px;
   --spacing-corner-radius-100px: 100px;

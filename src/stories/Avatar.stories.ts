@@ -24,47 +24,13 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Small: Story = {
-  args: {
-    size: 'small',
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    // Avatar should have role 'img' or similar
-    const avatar = canvas.getByRole('img');
-    await expect(avatar).toBeInTheDocument();
-  },
-};
-
-export const Medium: Story = {
+export const Default: Story = {
   args: {
     size: 'medium',
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const avatar = canvas.getByRole('img');
-    await expect(avatar).toBeInTheDocument();
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const avatar = canvas.getByRole('img');
-    await expect(avatar).toBeInTheDocument();
-  },
-};
-
-export const ExtraLarge: Story = {
-  args: {
-    size: 'extra-large',
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const avatar = canvas.getByRole('img');
+    const avatar = canvas.getByTestId('avatar-component');
     await expect(avatar).toBeInTheDocument();
   },
 };

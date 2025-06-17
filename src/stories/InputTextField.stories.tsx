@@ -40,6 +40,17 @@ export const Inactive: Story = {
     counter: '0/100',
     value: '',
   },
+  render: (args) => {
+    const [value, setValue] = useState(args.value);
+    
+    return (
+      <InputTextField 
+        {...args} 
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+    );
+  }
 };
 
 export const Active: Story = {
@@ -48,16 +59,19 @@ export const Active: Story = {
     heading: 'Heading',
     helpText: 'Help Text',
     counter: '0/100',
+    value: '',
   },
   render: (args) => {
     const [value, setValue] = useState(args.value);
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      setValue(event.target.value);
-      args.onChange?.(event);
-    };
-
-    return <InputTextField {...args} value={value} onChange={handleChange} />;
-  },
+    
+    return (
+      <InputTextField 
+        {...args} 
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+    );
+  }
 };
 
 export const Disabled: Story = {
