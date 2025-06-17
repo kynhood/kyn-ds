@@ -27,12 +27,6 @@ const meta: Meta<typeof Wizard> = {
     isDisabled: { control: 'boolean', description: 'Disable navigation', defaultValue: false },
     // Show or hide step labels
     showLabels: { control: 'boolean', description: 'Show/hide step labels', defaultValue: true },
-    // Array of completed step indices
-    completedSteps: {
-      control: { type: 'object' },
-      description: 'Array of completed step indices',
-      defaultValue: [],
-    },
   },
 };
 
@@ -45,7 +39,6 @@ export const Default: StoryObj<typeof Wizard> = {
     steps: ['Step 1', 'Step 2', 'Step 3'],
     isDisabled: false,
     showLabels: true,
-    completedSteps: [],
   },
   play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);

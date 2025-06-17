@@ -1,7 +1,7 @@
 {
-  "name": "@kynhood/kyn-ds",
+  "name": "kyn-ds",
   "private": false,
-  "version": "0.0.6",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -17,9 +17,10 @@
     "chromatic": "npx chromatic --project-token=chpt_2a8c96bef089848"
   },
   "dependencies": {
+    "@kynhood/kyn-ds": "^0.0.18",
     "@solar-icons/react": "^1.0.1",
     "clsx": "^2.1.1",
-    "kyn-ds": "github:kynhood/kyn-ds",
+    "kyn-ds": "^0.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
@@ -72,7 +73,6 @@
     "dist/types"
   ],
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://registry.npmjs.org/"
   }
 }

@@ -7,7 +7,6 @@ export interface WizardProps {
   onStepChange?: (step: number) => void;
   isDisabled?: boolean;
   showLabels?: boolean;
-  completedSteps?: number[];
 }
 
 export default function Wizard({
@@ -16,7 +15,6 @@ export default function Wizard({
   onStepChange,
   isDisabled = false,
   showLabels = true,
-  completedSteps = [],
 }: WizardProps) {
   return (
     <div className="wizard">
