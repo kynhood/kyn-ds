@@ -39,7 +39,7 @@ export const Default: Story = {
   },
 
   render: (args) => {
-    const [checked, setChecked] = useState(false);
+    const [, setChecked] = useState(false);
     const { ...restArgs } = args;
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

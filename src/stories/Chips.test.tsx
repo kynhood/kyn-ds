@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Chips from './Chips';
 
@@ -54,4 +54,4 @@ describe('Chips Component', () => {
     const chip = screen.getByText('Role Button Chip');
     expect(chip).toHaveAttribute('role', 'button');
   });
-}); 
+});

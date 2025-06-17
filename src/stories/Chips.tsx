@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 import "./chips.css"; // Import the CSS file for the chips
 
@@ -33,4 +33,4 @@ export default function Chips({
       <span className="chips-label">{label}</span>
     </div>
   );
-} 
+}

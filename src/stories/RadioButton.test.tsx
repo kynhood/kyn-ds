@@ -1,5 +1,4 @@
 /// <reference types="jest" />
-import * as React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import RadioButton from './RadioButton';
 
@@ -51,4 +50,4 @@ describe('RadioButton', () => {
     fireEvent.click(input);
     expect(handleChange).toHaveBeenCalledTimes(1);
   });
-}); 
+});

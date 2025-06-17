@@ -1,5 +1,3 @@
-import React from "react";
-import clsx from "clsx";
 import "./modal.css"; // Import the CSS file for the modal
 import { Button } from "./Button"; // Import the Button component
 
@@ -29,11 +27,11 @@ export default function Modal({
           <div className="modal-button-group" data-name="wrapper">
             <div className="modal-button-group-inner-flex">
               <Button label="Button" />
-              <Button label="Button" backgroundColor="#ffd43d" />
+              <Button label="Button" />
             </div>
           </div>
         </div>
       </div>
     </div>
   );
-} 
+}

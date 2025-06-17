@@ -1,7 +1,7 @@
 {
   "name": "@kynhood/kyn-ds",
   "private": false,
-  "version": "0.0.5",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -17,6 +17,7 @@
     "chromatic": "npx chromatic --project-token=chpt_2a8c96bef089848"
   },
   "dependencies": {
+    "@kynhood/kyn-ds": "^0.0.0",
     "@solar-icons/react": "^1.0.1",
     "clsx": "^2.1.1",
     "kyn-ds": "github:kynhood/kyn-ds",
@@ -59,17 +60,17 @@
   },
   "main": "dist/kyn-ds.cjs.js",
   "module": "dist/kyn-ds.es.js",
-  "types": "dist/types/index.d.ts",
+  "types": "src/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/kyn-ds.es.js",
       "require": "./dist/kyn-ds.cjs.js",
-      "types": "./dist/types/index.d.ts"
+      "types": "./src/index.d.ts"
     }
   },
   "files": [
     "dist",
-    "dist/types"
+    "src/index.d.ts"
   ],
   "publishConfig": {
     "access": "public",
