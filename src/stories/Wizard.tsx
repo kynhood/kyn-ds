@@ -29,10 +29,8 @@ export default function Wizard({
                   <div className="wizard-checkpoint-box">
                     <div
                       className={`wizard-checkpoint-number${
-                        completedSteps.includes(idx)
-                          ? " wizard-number-inactive"
-                          : idx === currentStep
-                          ? ""
+                        idx <= currentStep
+                          ? " wizard-number-active"
                           : " wizard-number-inactive"
                       }`}
                       style={{ cursor: isDisabled ? "not-allowed" : "pointer" }}
