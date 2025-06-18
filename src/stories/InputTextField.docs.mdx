@@ -1,0 +1,46 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import { Button } from './Button';
+import * as stories from './InputTextField.stories';
+
+<Meta of={stories} />
+
+# InputTextField
+
+<h6>The InputTextField component provides a styled text input with optional heading, help text, and character counter. It supports validation states, disabled mode, and integrates with the Kyn design system. The component is fully accessible and works across all modern browsers.</h6>
+
+<div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
+  <Button 
+    label="View in Figma"
+    theme="accent"
+    variant="filled"
+    color="dark"
+    size="small"
+    onClick={() => window.open('https://www.figma.com/design/o5wbWLIpZTzYDEMWYElJ6m/KYN---Style-Guide---2.0?node-id=556-25198&t=uZCTefiBRZgAL7cT-1', '_blank')}
+  />
+  <Button 
+    label="View on GitHub"
+    theme="accent"
+    variant="filled"
+    color="dark"
+    size="small"
+    onClick={() => window.open('https://github.com/kynhood/kyn-ds/blob/main/src/stories/InputTextField.tsx', '_blank')}
+  />
+</div>
+
+## Usage
+
+<Canvas>
+  <Story of={stories.Default} />
+</Canvas>
+
+<Controls of={stories.Default} />
+
+## Interactive Example
+
+<iframe 
+  src="https://stackblitz.com/edit/kyn-inputtextfield?embed=1&file=src/App.tsx"
+  style={{ width: '100%', height: '500px', border: 'none', borderRadius: '4px', overflow: 'hidden' }}
+  title="Kyn InputTextField Example"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+/>

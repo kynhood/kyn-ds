@@ -1,11 +1,12 @@
 {
-  "name": "kyn-ds",
+  "name": "@kynhood/kyn-ds",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "prepublishOnly": "npm run build",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -20,6 +21,9 @@
     "@kynhood/kyn-ds": "^0.0.18",
     "@solar-icons/react": "^1.0.1",
     "@stackblitz/sdk": "^1.11.0",
+    "@storybook/addons": "^7.6.17",
+    "@storybook/blocks": "^8.6.14",
+    "@storybook/theming": "^8.6.14",
     "clsx": "^2.1.1",
     "kyn-ds": "^0.1.0",
     "react": "^19.1.0",
@@ -29,7 +33,7 @@
     "@chromatic-com/storybook": "^4.0.0",
     "@eslint/js": "^9.25.0",
     "@storybook/addon-a11y": "^9.0.9",
-    "@storybook/addon-docs": "^9.0.9",
+    "@storybook/addon-docs": "^9.0.12",
     "@storybook/addon-vitest": "^9.0.9",
     "@storybook/react-vite": "^9.0.9",
     "@storybook/test": "^9.0.0-alpha.2",
@@ -75,5 +79,20 @@
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kynhood/kyn-ds.git"
+  },
+  "keywords": [
+    "react",
+    "design-system",
+    "components"
+  ],
+  "author": "Kynhood",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kynhood/kyn-ds/issues"
+  },
+  "homepage": "https://github.com/kynhood/kyn-ds#readme"
 }

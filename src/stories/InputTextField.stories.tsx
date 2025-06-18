@@ -1,6 +1,5 @@
 // Storybook story for the InputTextField component
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
 import InputTextField from './InputTextField';
 
 export default {

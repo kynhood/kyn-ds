@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
-import sdk from '@stackblitz/sdk';
+import React, { useState, useRef } from 'react';
 import './inputTextField.css';
 
 interface InputTextFieldProps {
@@ -91,19 +90,6 @@ const InputTextField: React.FC<InputTextFieldProps> = ({
     }, 0);
   };
 
-  useEffect(() => {
-    if (stackblitzRef.current) {
-      sdk.embedProjectId(
-        stackblitzRef.current,
-        'vitejs-vite-fygrfg7q',
-        {
-          forceEmbedLayout: true,
-          openFile: 'index.html',
-          height: 300
-        }
-      );
-    }
-  }, []);
 
   return (
     <div className="input-text-field-container">
