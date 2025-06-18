@@ -1,65 +1,83 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import sdk from '@stackblitz/sdk';
 import './inputTextField.css';
 
 interface InputTextFieldProps {
-  state?: 'inactive' | 'active' | 'disabled' | 'error';
   heading?: string;
   helpText?: string;
-  counter?: string;
-  value?: string;
+  maxLength?: number;
+  showHelpText?: boolean;
+  showCounter?: boolean;
+  disabled?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
+const MAX_HELP_TEXT_CHARS = 50;
+
 const InputTextField: React.FC<InputTextFieldProps> = ({
-  state = 'inactive',
   heading = '',
   helpText = '',
-  counter = '',
-  value = '',
+  maxLength,
+  showHelpText = true,
+  showCounter = true,
+  disabled = false,
   onChange = () => {},
 }) => {
   const [isActive, setIsActive] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [value, setValue] = useState('');
+  const stackblitzRef = useRef<HTMLDivElement>(null);
+
+  // Validate helpText character count
+  const validatedHelpText = helpText.length > MAX_HELP_TEXT_CHARS 
+    ? helpText.substring(0, MAX_HELP_TEXT_CHARS)
+    : helpText;
+  
+  if (helpText.length > MAX_HELP_TEXT_CHARS) {
+    console.warn(`Help text exceeds ${MAX_HELP_TEXT_CHARS} character limit`);
+  }
+
+  // Calculate counter text
+  const counter = maxLength ? `${value.length}/${maxLength}` : '';
 
   const getTextColor = () => {
-    switch (state) {
-      case 'disabled':
-        return 'var(--color-neutral-color-dark-dark-200)';
-      case 'error':
-        return 'var(--color-accent-color-red-red-500)';
-      case 'inactive':
-        return '#585858';
-      default:
-        return 'var(--color-neutral-color-dark-dark-400)';
+    if (isError) {
+      return 'var(--color-accent-color-red-red-500)';
     }
+    return '#585858';
   };
 
   const getHeadingTextColor = () => {
-    if (state === 'disabled') {
-      return 'var(--color-neutral-color-dark-dark-200)';
-    }
-    if (state === 'inactive') {
-      return '#585858';
-    }
-    return 'var(--color-neutral-color-dark-dark-500)';
+    return '#585858';
   };
 
   const getInfoCircleFill = () => {
-    if (state === 'disabled') {
-      return 'var(--color-neutral-color-dark-dark-100)';
-    }
-    if (state === 'error') {
+    if (isError) {
       return 'var(--color-accent-color-red-red-500)';
     }
     return 'var(--color-neutral-color-dark-dark-400)';
   };
 
-  const isTextVisible = state === 'active' || state === 'error' || state === 'disabled';
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = maxLength ? e.target.value.slice(0, maxLength) : e.target.value;
+    
+    if (maxLength && newValue.length === maxLength) {
+      setIsError(true);
+    } else if (isError) {
+      setIsError(false);
+    }
+    
+    setValue(newValue);
+    onChange(e);
+  };
 
   const handleFocus = () => {
+    console.log('Input field focused');
     setIsActive(true);
   };
 
   const handleBlur = () => {
+    console.log('Input field blurred');
     if (!value) {
       setIsActive(false);
     }
@@ -73,13 +91,31 @@ const InputTextField: React.FC<InputTextFieldProps> = ({
     }, 0);
   };
 
+  useEffect(() => {
+    if (stackblitzRef.current) {
+      sdk.embedProjectId(
+        stackblitzRef.current,
+        'vitejs-vite-fygrfg7q',
+        {
+          forceEmbedLayout: true,
+          openFile: 'index.html',
+          height: 300
+        }
+      );
+    }
+  }, []);
+
   return (
     <div className="input-text-field-container">
       <div 
-        className={`input-wrapper ${isActive ? 'active' : ''} ${value ? 'has-content' : ''}`}
-        data-state={state}
-        onClick={!isActive ? handleClick : undefined}
-        style={{ cursor: !isActive ? 'pointer' : 'default' }}
+        className={`input-wrapper 
+          ${isActive ? 'active' : ''} 
+          ${value ? 'has-content' : ''} 
+          ${disabled ? 'disabled' : ''}
+        `}
+        data-state={isError && !disabled ? 'error' : 'inactive'}
+        onClick={!isActive && !disabled ? handleClick : undefined}
+        style={{ cursor: !isActive && !disabled ? 'pointer' : 'default' }}
       >
         <div className="input-content-wrapper">
           <div className="input-content">
@@ -92,43 +128,38 @@ const InputTextField: React.FC<InputTextFieldProps> = ({
               className="text-input"
               type="text"
               value={value}
-              onChange={onChange}
+              onChange={!disabled ? handleChange : undefined}
               onFocus={handleFocus}
               onBlur={handleBlur}
-              disabled={state === 'disabled'}
+              maxLength={maxLength}
+              disabled={disabled}
               style={{ color: getTextColor() }}
               autoFocus={isActive}
             />
           </div>
-          <div className="help-counter-wrapper">
-            <div className="help-text-group">
-              {isTextVisible && (
-                <div className="info-circle">
-                  <svg className="info-circle-svg" viewBox="0 0 16 16" fill="none">
-                    <g clipPath="url(#clip0_1_2)">
-                      <path
-                        d="M7.16667 4.33333C7.16667 4.70152 7.46515 5 7.83333 5C8.20152 5 8.5 4.70152 8.5 4.33333C8.5 3.96514 8.20152 3.66667 7.83333 3.66667C7.46515 3.66667 7.16667 3.96514 7.16667 4.33333ZM7.16667 6.16667C6.79848 6.16667 6.5 6.46514 6.5 6.83333V11.1667C6.5 11.5349 6.79848 11.8333 7.16667 11.8333C7.53486 11.8333 7.83333 11.5349 7.83333 11.1667V6.83333C7.83333 6.46514 7.53486 6.16667 7.16667 6.16667ZM7.16667 14.3333C3.20863 14.3333 0 11.1247 0 7.16667C0 3.20863 3.20863 0 7.16667 0C11.1247 0 14.3333 3.20863 14.3333 7.16667C14.3333 11.1247 11.1247 14.3333 7.16667 14.3333ZM7.16667 1C3.76091 1 1 3.76091 1 7.16667C1 10.5724 3.76091 13.3333 7.16667 13.3333C10.5724 13.3333 13.3333 10.5724 13.3333 7.16667C13.3333 3.76091 10.5724 1 7.16667 1Z"
-                        fill={getInfoCircleFill()}
-                        fillRule="evenodd"
-                      />
-                    </g>
-                  </svg>
-                </div>
-              )}
-              {isTextVisible && (
-                <p className="help-text" style={{ color: getTextColor() }}>
-                  {helpText}
-                </p>
-              )}
-            </div>
-            {isTextVisible && (
-              <p className="counter" style={{ color: getTextColor() }}>
-                {counter}
-              </p>
-            )}
-          </div>
         </div>
       </div>
+      <div className="help-counter-wrapper">
+        {showHelpText && (
+          <div className="help-text-group">
+            <div className="info-circle">
+              <svg className="info-circle-svg" viewBox="0 0 16 16" fill="none">
+                <circle cx="8" cy="8" r="7" stroke={getInfoCircleFill()} stroke-width="1.5"/>
+                <text x="8" y="11" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill={getInfoCircleFill()}>i</text>
+              </svg>
+            </div>
+            <p className="help-text" style={{ color: getTextColor() }}>
+              {validatedHelpText}
+            </p>
+          </div>
+        )}
+        {showCounter && (
+          <p className="counter" style={{ color: getTextColor() }}>
+            {counter}
+          </p>
+        )}
+      </div>
+      <div ref={stackblitzRef} style={{ marginTop: '20px' }} />
     </div>
   );
 };

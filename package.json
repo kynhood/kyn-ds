@@ -19,6 +19,7 @@
   "dependencies": {
     "@kynhood/kyn-ds": "^0.0.18",
     "@solar-icons/react": "^1.0.1",
+    "@stackblitz/sdk": "^1.11.0",
     "clsx": "^2.1.1",
     "kyn-ds": "^0.1.0",
     "react": "^19.1.0",
