@@ -1,13 +1,19 @@
 # kyn-ds
 
-# React + TypeScript + Vite
+Kynhood Design System - A React component library built with TypeScript and Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About
 
-Currently, two official plugins are available:
+kyn-ds is a design system providing reusable UI components for Kynhood applications. It combines:
+- React for component architecture
+- TypeScript for type safety
+- Vite for fast development experience
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- Storybook documentation
+- Chromatic visual testing
+- Comprehensive component library
 
 ## Expanding the ESLint configuration
 
@@ -54,3 +60,11 @@ export default tseslint.config({
   },
 })
 ```
+
+## Development Setup
+
+The project uses:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react) for Fast Refresh
+- ESLint for code quality
+- TypeScript for type safety
