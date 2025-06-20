@@ -1,6 +1,6 @@
-// Storybook story for the Avatar component
-// Only UI controls and documentation, no business logic is changed
-import type { Meta, StoryObj } from '@storybook/react';
+// kyn-ds documentation for the Avatar component
+// UI controls and documentation powered by Storybook
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { within, expect } from '@storybook/test';
 import Avatar from './Avatar';
 import './avatar.css';

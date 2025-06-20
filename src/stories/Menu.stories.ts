@@ -1,6 +1,6 @@
 // Storybook story for the Menu component
 // Only UI controls and documentation, no business logic is changed
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import './Menu.css';
 import Menu from "./Menu";
 

@@ -1,7 +1,7 @@
 // Storybook story for the Wizard component
 // Only UI controls and documentation, no business logic is changed
 import type { Meta, StoryObj } from '@storybook/react';
-import { within } from '@storybook/test';
+import { expect, within } from '@storybook/test';
 import Wizard from './Wizard';
 
 // Storybook metadata and controls for Wizard

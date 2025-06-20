@@ -1,0 +1,36 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as stories from './Badge.stories';
+import Badge from './Badge';
+import { Button } from './Button';
+
+<Meta of={stories} />
+
+# Badge
+
+Status indicators for notifications, labels, and small counts.
+
+<div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
+  <Button 
+    label="View in Figma"
+    theme="accent"
+    variant="filled"
+    color="dark"
+    size="small"
+    onClick={() => window.open('https://www.figma.com/file/o5wbWLIpZTzYDEMWYElJ6m/KYN-Design-System', '_blank')}
+  />
+  <Button 
+    label="View on GitHub"
+    theme="accent"
+    variant="filled"
+    color="dark"
+    size="small"
+    onClick={() => window.open('https://github.com/kynhood/kyn-ds/blob/main/src/stories/Badge.tsx', '_blank')}
+  />
+</div>
+
+## Usage
+<Canvas>
+  <Story of={stories.Error} />
+</Canvas>
+
+<Controls of={stories.Error} />

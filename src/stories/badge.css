@@ -54,6 +54,6 @@
 
 .badge-neutral-dark-alpha {
   background-color: var(--color-neutral-color-dark-dark-alpha-500); /* neutral-color/dark/dark-alpha-500 */
-  color: var(--color-neutral-color-gray-gray-50); /* neutral-color/gray/gray-50 */
+  color: var(--color-neutral-color-dark-dark-900); /* neutral-color/dark/dark-50 */
   backdrop-filter: blur(4px);
 } 
