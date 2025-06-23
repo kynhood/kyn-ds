@@ -28,8 +28,11 @@ export default function Banner({
     </React.Fragment>
   ));
 
+  // Create a clean version of the message for aria-label (remove extra whitespace and newlines)
+  const cleanAriaLabel = message.replace(/\s+/g, ' ').trim();
+
   return (
-    <div className={bannerClass} role="status" aria-label={message}>
+    <div className={bannerClass} role="status" aria-label={cleanAriaLabel}>
       <div className="banner-content">
         <p className="banner-message">{formattedMessage}</p>
       </div>
