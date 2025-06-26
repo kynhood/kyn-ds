@@ -1,5 +1,4 @@
 :root {
-  /* Brand Colors */
   --color-brand-color-brand-brand-alpha-50: #fde9ea80;
   --color-brand-color-brand-brand-alpha-900: #63101380;
   --color-brand-color-brand-brand-alpha-500: #eb252d80;
@@ -13,8 +12,6 @@
   --color-brand-color-brand-brand-700: #a71a20ff;
   --color-brand-color-brand-brand-800: #811419ff;
   --color-brand-color-brand-brand-900: #631013ff;
-
-  /* Primary Colors */
   --color-primary-color-yellow-yellow-alpha-50: #fffbec80;
   --color-primary-color-yellow-yellow-alpha-500: #ffd43d80;
   --color-primary-color-yellow-yellow-alpha-900: #6b591a80;
@@ -28,8 +25,6 @@
   --color-primary-color-yellow-yellow-700: #b5972bff;
   --color-primary-color-yellow-yellow-800: #8c7522ff;
   --color-primary-color-yellow-yellow-900: #6b591aff;
-
-  /* Accent Colors */
   --color-accent-color-red-red-alpha-50: #ffe7e880;
   --color-accent-color-red-red-alpha-500: #ff111580;
   --color-accent-color-red-red-alpha-900: #6b070980;
@@ -43,7 +38,6 @@
   --color-accent-color-red-red-700: #b50c0fff;
   --color-accent-color-red-red-800: #8c090cff;
   --color-accent-color-red-red-900: #6b0709ff;
-
   --color-accent-color-orange-orange-alpha-50: #fff7ed80;
   --color-accent-color-orange-orange-alpha-500: #ffb14a80;
   --color-accent-color-orange-orange-alpha-900: #6b4a1f80;
@@ -57,7 +51,6 @@
   --color-accent-color-orange-orange-700: #b57e35ff;
   --color-accent-color-orange-orange-800: #8c6129ff;
   --color-accent-color-orange-orange-900: #6b4a1fff;
-
   --color-accent-color-green-green-alpha-50: #f1f7f180;
   --color-accent-color-green-green-alpha-500: #70ad6f80;
   --color-accent-color-green-green-alpha-900: #2f492f80;
@@ -71,7 +64,6 @@
   --color-accent-color-green-green-700: #507b4fff;
   --color-accent-color-green-green-800: #3e5f3dff;
   --color-accent-color-green-green-900: #2f492fff;
-
   --color-accent-color-blue-blue-alpha-50: #e7f7ff80;
   --color-accent-color-blue-blue-alpha-500: #11b1ff80;
   --color-accent-color-blue-blue-alpha-900: #074a6b80;
@@ -85,7 +77,6 @@
   --color-accent-color-blue-blue-700: #0c7eb5ff;
   --color-accent-color-blue-blue-800: #09618cff;
   --color-accent-color-blue-blue-900: #074a6bff;
-
   --color-accent-color-purple-purple-alpha-50: #f3eeff80;
   --color-accent-color-purple-purple-alpha-500: #8854ff80;
   --color-accent-color-purple-purple-alpha-900: #39236b80;
@@ -99,8 +90,6 @@
   --color-accent-color-purple-purple-700: #613cb5ff;
   --color-accent-color-purple-purple-800: #4b2e8cff;
   --color-accent-color-purple-purple-900: #39236bff;
-
-  /* Neutral Colors */
   --color-neutral-color-dark-dark-alpha-500: #2e2e2e80;
   --color-neutral-color-dark-dark-alpha-50: #eaeaea80;
   --color-neutral-color-dark-dark-alpha-900: #13131380;
@@ -114,7 +103,6 @@
   --color-neutral-color-dark-dark-700: #212121ff;
   --color-neutral-color-dark-dark-800: #191919ff;
   --color-neutral-color-dark-dark-900: #131313ff;
-
   --color-neutral-color-gray-gray-alpha-50: #fdfdfd80;
   --color-neutral-color-gray-gray-alpha-500: #e9e9e980;
   --color-neutral-color-gray-gray-alpha-900: #62626280;
@@ -128,7 +116,6 @@
   --color-neutral-color-gray-gray-700: #a5a5a5ff;
   --color-neutral-color-gray-gray-800: #808080ff;
   --color-neutral-color-gray-gray-900: #626262ff;
-
   --color-neutral-color-soft-blue-soft-blue-alpha-50: #fefeff80;
   --color-neutral-color-soft-blue-soft-blue-alpha-500: #f4f9ff80;
   --color-neutral-color-soft-blue-soft-blue-alpha-900: #66696b80;
@@ -142,13 +129,10 @@
   --color-neutral-color-soft-blue-soft-blue-700: #adb1b5ff;
   --color-neutral-color-soft-blue-soft-blue-800: #86898cff;
   --color-neutral-color-soft-blue-soft-blue-900: #66696bff;
-
-  /* Typography */
   --typography-typeface-family-manrope: 'Manrope';
   --typography-typeface-weight-regular: 400;
   --typography-typeface-weight-semi-bold: 600;
   --typography-typeface-weight-bold: 700;
-
   --typography-typeface-size-regular-paragraph-small: 12px;
   --typography-typeface-size-regular-paragraph-medium: 14px;
   --typography-typeface-size-regular-paragraph-large: 16px;
@@ -158,12 +142,9 @@
   --typography-typeface-size-bold-label-small: 20px;
   --typography-typeface-size-bold-label-medium: 24px;
   --typography-typeface-size-bold-label-large: 32px;
-
   --typography-typeface-line-height-12-regular-paragraph: 18px;
   --typography-typeface-line-height-14-semibold-label: 21px;
   --typography-typeface-line-height-16-regular-paragraph: 24px;
-
-  /* Spacing */
   --spacing-gaps-0px: 0px;
   --spacing-gaps-2px: 2px;
   --spacing-gaps-4px: 4px;

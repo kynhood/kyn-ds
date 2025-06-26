@@ -2,11 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import '../styles/designTokens.css';
 import './banner.css';
 import Banner from './Banner';
-
-/**
- * Banner component displays important messages to users with different visual styles
- * based on the message type (error, warning, success, info).
- */
 const meta = {
   title: 'Components/Banner',
   component: Banner,
@@ -51,13 +46,8 @@ const meta = {
     message: 'This is a default banner message',
   },
 } satisfies Meta<typeof Banner>;
-
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-/**
- * Error banner for critical issues that require immediate attention
- */
 export const Error: Story = {
   args: {
     type: 'error',
@@ -71,10 +61,6 @@ export const Error: Story = {
     },
   },
 };
-
-/**
- * Warning banner for potential issues that the user should be aware of
- */
 export const Warning: Story = {
   args: {
     type: 'warning',
@@ -88,10 +74,6 @@ export const Warning: Story = {
     },
   },
 };
-
-/**
- * Success banner for confirming successful actions
- */
 export const Success: Story = {
   args: {
     type: 'success',
@@ -105,10 +87,6 @@ export const Success: Story = {
     },
   },
 };
-
-/**
- * Info banner for general information
- */
 export const Info: Story = {
   args: {
     type: 'info',
@@ -122,10 +100,6 @@ export const Info: Story = {
     },
   },
 };
-
-/**
- * Multi-line message example
- */
 export const MultiLine: Story = {
   args: {
     type: 'info',
@@ -135,24 +109,6 @@ export const MultiLine: Story = {
     docs: {
       description: {
         story: 'Example showing how the banner handles multi-line messages.',
-      },
-    },
-  },
-};
-
-/**
- * Interactive example allowing users to test different banner types
- */
-export const Interactive: Story = {
-  args: {
-    type: 'info',
-    message: 'This is an interactive banner. Use the controls in the Storybook panel to change its type and message.',
-  },
-  parameters: {
-    controls: { expanded: true },
-    docs: {
-      description: {
-        story: 'Interactive example that allows you to test different banner types and messages using Storybook controls.',
       },
     },
   },

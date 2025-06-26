@@ -2,14 +2,12 @@
 .avatar {
   position: relative;
 }
-
 .avatar-image {
   display: block;
   max-width: none;
   width: 100%;
   height: 100%;
 }
-
 .avatar-small {
   background-color: var(--color-neutral-color-gray-gray-500);
   padding: var( --spacing-gaps-4px);
@@ -17,7 +15,6 @@
   width: 20px;
   height: 20px;
 }
-
 .avatar-medium {
   background-color: var(--color-neutral-color-gray-gray-500);
   padding: var( --spacing-gaps-6px);
@@ -25,7 +22,6 @@
   width: 24px;
   height: 24px;
 }
-
 .avatar-large {
   background-color: var(--color-neutral-color-gray-gray-500);
   padding: var( --spacing-gaps-8px);
@@ -33,7 +29,6 @@
   width: 36px;
   height: 36px;
 }
-
 .avatar-extra-large {
   background-color: var(--color-neutral-color-gray-gray-500);
   padding: var( --spacing-gaps-12px);

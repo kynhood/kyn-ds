@@ -1,6 +1,4 @@
 @import '../styles/designTokens.css';
-
-/* Base Styles */
 .input-text-field-container {
   width: 396px;
   display: flex;
@@ -9,7 +7,6 @@
   justify-content: center;
   align-items: center;
 }
-
 .input-wrapper {
   background-color: var(--color-neutral-color-gray-gray-50);
   height: 69px;
@@ -22,14 +19,12 @@
   position: relative;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .input-content-wrapper {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-gaps-8px);
   width: 100%;
 }
-
 .input-content {
   box-sizing: border-box;
   display: flex;
@@ -43,31 +38,24 @@
   width: 100%;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* State Management */
 .input-wrapper[data-state="inactive"] {
   background-color: #fdfdfd;
   border-color: #bebebe;
 }
-
 .input-wrapper[data-state="inactive"] .heading {
   transform: translateY(8px);
   font-size: var(--typography-typeface-size-semi-bold-label-large);
   line-height: var(--typography-typeface-line-height-20-bold-label);
   color: var(--color-neutral-color-dark-dark-400);
 }
-
 .input-wrapper[data-state="inactive"] .help-text,
 .input-wrapper[data-state="inactive"] .counter {
   color: var(--color-neutral-color-dark-dark-400);
 }
-
 .input-wrapper[data-state="error"] .help-text,
 .input-wrapper[data-state="error"] .counter {
   color: var(--color-accent-color-red-red-500);
 }
-
-/* Content Visibility */
 .text-input {
   font-family: var(--typography-typeface-family-manrope), sans-serif;
   font-weight: var(--typography-typeface-weight-bold);
@@ -82,7 +70,6 @@
   position: absolute;
   transition: opacity 0.3s ease, height 0.3s ease;
 }
-
 .input-wrapper.active .text-input,
 .input-wrapper.has-content .text-input {
   opacity: 1;
@@ -90,8 +77,6 @@
   position: static;
   width: 100%;
 }
-
-/* Heading Transform States */
 .heading {
   font-family: var(--typography-typeface-family-manrope), sans-serif;
   font-weight: var(--typography-typeface-weight-bold);
@@ -108,7 +93,6 @@
   backface-visibility: hidden;
   transform-origin: left center;
 }
-
 .input-wrapper.active .heading,
 .input-wrapper.has-content .heading,
 .input-wrapper:focus-within .heading,
@@ -119,31 +103,23 @@
   font-weight: var(--typeface-weight-regular, 400);
   line-height: var(--typeface-line-height-12-regular-paragraph, 14.4px);
 }
-
 .input-wrapper.active .heading,
 .input-wrapper.has-content .heading,
 .input-wrapper:focus-within .heading {
   transform: translateY(8px);
 }
-
 .input-wrapper.active:focus-within .heading {
   transform: translateY(-8px);
   letter-spacing: 0.2px;
 }
-
-/* Typing State */
 .input-wrapper.active:focus-within .heading {
   color: var(--color-neutral-color-dark-dark-600);
   letter-spacing: 0.2px;
   transform: translateY(8px);
 }
-
-/* Focus States */
 .text-input:focus {
   outline: none;
 }
-
-/* Helper Elements */
 .help-counter-wrapper {
   display: flex;
   justify-content: space-between;
@@ -151,19 +127,16 @@
   box-sizing: border-box;
   min-height: 24px;
 }
-
 .help-text-group {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-
 .info-circle {
   width: var(--spacing-gaps-16px);
   height: var(--spacing-gaps-16px);
   flex-shrink: 0;
 }
-
 .help-text {
   font-family: var(--typography-typeface-family-manrope), sans-serif;
   font-weight: var(--typography-typeface-weight-regular);
@@ -171,18 +144,15 @@
   line-height: var(--typography-typeface-line-height-12-regular-paragraph);
   color: var(--color-neutral-color-dark-dark-400);
 }
-
 .info-circle-svg {
   display: block;
   width: 100%;
   height: 100%;
 }
-
 .counter {
   flex-shrink: 0;
   margin-left: auto;
 }
-
 .heading-wrapper {
   position: relative;
   transform: translateY(-8px);
@@ -193,24 +163,18 @@
   height: 100%;
   justify-content: center;
 }
-
-/* Help Text & Counter Colors */
 .input-wrapper[data-state="inactive"] .help-text,
 .input-wrapper[data-state="inactive"] .counter {
   color: var(--color-neutral-color-dark-dark-400);
 }
-
 .input-wrapper[data-state="error"] .help-text,
 .input-wrapper[data-state="error"] .counter {
   color: var(--color-accent-color-red-red-500);
 }
-
 .input-wrapper.disabled .help-text,
 .input-wrapper.disabled .counter {
   color: var(--color-neutral-color-dark-dark-200) !important;
 }
-
-/* Disabled State - Must come last to override everything */
 .input-wrapper.disabled,
 .input-wrapper.disabled .heading {
   color: var(--color-neutral-color-dark-dark-200) !important;
@@ -218,7 +182,6 @@
   fill: var(--color-neutral-color-dark-dark-200) !important;
   opacity: 0.6 !important;
 }
-
 .input-wrapper.disabled .text-input {
   background-color: var(--color-neutral-color-light-light-100) !important;
   cursor: not-allowed !important;

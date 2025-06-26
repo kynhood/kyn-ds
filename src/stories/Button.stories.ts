@@ -1,30 +1,19 @@
-// Storybook story for the Button component
-// Only UI controls and documentation, no business logic is changed
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Meta, StoryObj } from "@storybook/react";
 import './button.css';
 import { within, expect } from '@storybook/test';
 import { Button } from "./Button";
-
-// Storybook metadata and controls for Button
 const meta = {
-  title: "Components/Button", // Storybook sidebar title
-  component: Button, // The component to document
+  title: "Components/Button",
+  component: Button,
   parameters: { layout: "centered" },
   tags: ["autodocs"],
   argTypes: {
-    // Button size
     size: { control: 'radio', options: ['xsmall', 'small', 'large'], description: 'Button size' },
-    // Disabled state
     disabled: { control: 'boolean', description: 'Disable the button' },
-    // Show leading icon
     leadingIcon: { control: 'boolean', description: 'Show leading icon' },
-    // Show trailing icon
     trailingIcon: { control: 'boolean', description: 'Show trailing icon' },
-    // Button theme
     theme: { control: 'radio', options: ['primary', 'accent', 'blur'], description: 'Button theme' },
-    // Button variant
     variant: { control: 'radio', options: ['filled', 'outline', 'text'], description: 'Button variant' },
-    // Button color (only for accent theme)
     color: {
       control: { type: "select" },
       options: ["blue", "grey", "dark"],
@@ -34,12 +23,8 @@ const meta = {
   },
   args: { leadingIcon: true, color: "grey" },
 } satisfies Meta<typeof Button>;
-
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-
 export const Primary: Story = {
   args: {
     label: "Button",
@@ -53,12 +38,10 @@ export const Primary: Story = {
   },
   play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
-    // Use label from args for robust test
     const button = canvas.getByRole('button', { name: args.label ?? '' });
     await expect(button).toBeInTheDocument();
   },
 };
-
 export const Accent: Story = {
   args: {
     label: "Button",
@@ -84,7 +67,6 @@ export const Accent: Story = {
     await expect(button).toBeInTheDocument();
   },
 };
-
 export const Blur: Story = {
   args: {
     label: "Button",

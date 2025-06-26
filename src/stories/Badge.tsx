@@ -1,12 +1,10 @@
 import clsx from "clsx";
 import { CloseCircle, CheckCircle, InfoCircle, DangerTriangle } from "@solar-icons/react";
 import "./badge.css";
-
 export interface BadgeProps {
   type?: "error" | "warning" | "success" | "info" | "neutral-light" | "neutral-dark-alpha";
   label: string;
 }
-
 export default function Badge({
   type = "info",
   label,
@@ -22,7 +20,6 @@ export default function Badge({
       "badge-neutral-dark-alpha": type === "neutral-dark-alpha",
     }
   );
-
   const IconComponent = () => {
     switch (type) {
       case "error":
@@ -41,7 +38,6 @@ export default function Badge({
         return null;
     }
   };
-
   return (
     <div className={badgeClass} role="status" aria-label={label}>
       <div className="badge-content">

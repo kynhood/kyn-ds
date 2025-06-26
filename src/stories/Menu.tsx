@@ -1,6 +1,5 @@
 import './Menu.css';
 import { InfoCircle } from "@solar-icons/react";
-
 export default function Menu({ onMenuItemClick }: { onMenuItemClick?: () => void }) {
   return (
     <div

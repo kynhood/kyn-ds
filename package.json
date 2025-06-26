@@ -31,7 +31,7 @@
     "storybook": "8.6.14"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^3.0.0",
+    "@chromatic-com/storybook": "^3.2.7",
     "@eslint/js": "^9.25.0",
     "@storybook/addon-a11y": "^8.6.14",
     "@storybook/addon-docs": "^8.6.14",
@@ -59,11 +59,13 @@
     "jsdom": "^26.1.0",
     "playwright": "^1.53.0",
     "postcss": "^8.5.5",
+    "remark-gfm": "^4.0.1",
     "storybook": "^8.6.14",
     "tailwindcss": "^4.1.10",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
     "vite": "^6.3.5",
+    "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.3"
   },
   "main": "dist/kyn-ds.cjs.js",

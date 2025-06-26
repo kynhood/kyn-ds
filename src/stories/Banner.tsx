@@ -1,12 +1,10 @@
 import React from "react";
 import clsx from "clsx";
-import "./banner.css"; // Import the CSS file for the banner
-
+import "./banner.css"; 
 export interface BannerProps {
   type?: "error" | "warning" | "success" | "info";
   message: string;
 }
-
 export default function Banner({
   type = "info",
   message,
@@ -20,17 +18,13 @@ export default function Banner({
       "banner-info": type === "info",
     }
   );
-
   const formattedMessage = message.split('\n').map((line, index) => (
     <React.Fragment key={index}>
       {line}
       {index < message.split('\n').length - 1 && <br />}
     </React.Fragment>
   ));
-
-  // Create a clean version of the message for aria-label (remove extra whitespace and newlines)
   const cleanAriaLabel = message.replace(/\s+/g, ' ').trim();
-
   return (
     <div className={bannerClass} role="status" aria-label={cleanAriaLabel}>
       <div className="banner-content">

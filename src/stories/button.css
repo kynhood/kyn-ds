@@ -19,28 +19,21 @@
   box-sizing: border-box;
   overflow: hidden;
 }
-
-/* Base Icon and Label Styles */
 .storybook-button__icon {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .storybook-button__label {
   display: inline-flex;
   align-items: center;
 }
-
-/* Icon Gap Styles */
 .storybook-button__icon + .storybook-button__label {
   margin-left: var(--spacing-gaps-8px);
 }
 .storybook-button__label + .storybook-button__icon {
   margin-left: var(--spacing-gaps-8px);
 }
-
-/* Size Styles */
 .storybook-button--xsmall {
   padding: var(--spacing-gaps-4px) var(--spacing-gaps-8px);
   font-size: var(--typography-typeface-size-regular-paragraph-small);
@@ -49,7 +42,6 @@
   line-height: var(--typography-typeface-line-height-14-semibold-label);
   border-radius: var(--spacing-corner-radius-100px);
 }
-
 .storybook-button--xsmall .storybook-button__icon:first-child {
   margin-left: var(--spacing-gaps-0px);
 }
@@ -57,7 +49,6 @@
   margin-left: var(--spacing-gaps-4px);
   margin-right: var(--spacing-gaps-0px);
 }
-
 .storybook-button--xsmall .storybook-button__icon {
   width: var(--spacing-gaps-16px);
   height: var(--spacing-gaps-16px);
@@ -67,271 +58,211 @@
   height: var(--spacing-gaps-16px);
   display: block;
 }
-
 .storybook-button--small {
   padding: var(--spacing-gaps-10px) var(--spacing-gaps-16px);
   font-size: var(--typography-typeface-size-regular-paragraph-small);
 }
-
 .storybook-button--large {
   padding: var(--spacing-gaps-16px) var(--spacing-gaps-32px);
   font-size: var(--typography-typeface-size-semi-bold-label-large);
   line-height: var(--typography-typeface-line-height-16-regular-paragraph);
   height: 56px;
 }
-
 .storybook-button--large .storybook-button__icon {
   width: 24px;
   height: 24px;
 }
-
 .storybook-button--large .storybook-button__label {
   line-height: var(--typography-typeface-line-height-16-regular-paragraph);
   font-size: var(--typography-typeface-size-semi-bold-label-large);
 }
-
-/* Combined Small and XSmall Icon Gap Adjustments */
 .storybook-button--small .storybook-button__icon + .storybook-button__label,
 .storybook-button--xsmall .storybook-button__icon + .storybook-button__label,
 .storybook-button--small .storybook-button__label + .storybook-button__icon,
 .storybook-button--xsmall .storybook-button__label + .storybook-button__icon {
   margin-left: var(--spacing-gaps-4px) !important;
 }
-
-/* General Variant Styles */
 .storybook-button--outline {
   background-color: transparent;
   border: 1px solid;
 }
-
 .storybook-button--text {
   background-color: transparent;
   border: none;
   padding: 0;
 }
-
-/* Primary Theme Styles */
 .storybook-button--primary {
   background-color: var(--color-primary-color-yellow-yellow-500);
   color: var(--color-neutral-color-dark-dark-500);
   border-radius: var(--spacing-corner-radius-100px);
   font-weight: var(--typography-typeface-weight-semi-bold);
 }
-
 .storybook-button--primary:disabled {
   background-color: var(--color-primary-color-yellow-yellow-alpha-500);
   color: var(--color-neutral-color-dark-dark-400);
   cursor: not-allowed;
 }
-
-/* Primary Theme - Outline Variant */
 .storybook-button--primary.storybook-button--outline {
   background-color: transparent;
   border-color: var(--color-primary-color-yellow-yellow-500);
   color: var(--color-primary-color-yellow-yellow-500);
 }
-
 .storybook-button--primary.storybook-button--outline:disabled {
   border-color: var(--color-primary-color-yellow-yellow-alpha-500);
   color: var(--color-primary-color-yellow-yellow-200);
 }
-
-/* Primary Theme - Text Variant */
 .storybook-button--primary.storybook-button--text {
   background-color: transparent;
   color: var(--color-primary-color-yellow-yellow-500);
 }
-
 .storybook-button--primary.storybook-button--text:disabled {
   color: var(--color-primary-color-yellow-yellow-200);
 }
-
-/* Primary Theme - Small Size */
 .storybook-button--primary.storybook-button--small {
   padding: var(--spacing-gaps-8px) var(--spacing-gaps-16px);
   font-size: var(--typography-typeface-size-semi-bold-label-small);
   font-weight: var(--typography-typeface-weight-semi-bold);
   line-height: var(--typography-typeface-line-height-14-semibold-label);
 }
-
 .storybook-button--primary.storybook-button--small:disabled {
   background-color: var(--color-primary-color-yellow-yellow-alpha-500);
   color: var(--color-neutral-color-dark-dark-400);
   cursor: not-allowed;
 }
-
-/* Accent Theme Styles */
 .storybook-button--accent {
   background-color: var(--color-neutral-color-dark-dark-500);
   color: var(--color-neutral-color-gray-gray-50);
   border-radius: var(--spacing-corner-radius-100px);
 }
-
 .storybook-button--accent:disabled {
   background-color: var(--color-neutral-color-dark-dark-200);
   color: var(--color-neutral-color-gray-gray-600);
   cursor: not-allowed;
 }
-
-/* Accent Theme - Outline Variant */
 .storybook-button--accent.storybook-button--outline {
   border-color: var(--color-neutral-color-dark-dark-500);
   color: var(--color-neutral-color-dark-dark-500);
 }
-
 .storybook-button--accent.storybook-button--outline:disabled {
   border-color: var(--color-neutral-color-dark-dark-200);
   color: var(--color-neutral-color-gray-gray-600);
 }
-
-/* Accent Theme - Text Variant */
 .storybook-button--accent.storybook-button--text {
   background-color: transparent;
   color: var(--color-neutral-color-dark-dark-500);
 }
-
 .storybook-button--accent.storybook-button--text:disabled {
   background-color: transparent;
   color: var(--color-neutral-color-dark-dark-200);
 }
-
-/* Accent Theme - Color Variants */
 .storybook-button--accent--blue {
   background-color: var(--color-accent-color-blue-blue-500);
   color: var(--color-neutral-color-gray-gray-50);
 }
-
 .storybook-button--accent--blue:disabled {
   color: var(--color-neutral-color-dark-dark-200);
 }
-
 .storybook-button--accent--grey {
   background-color: var(--color-neutral-color-gray-gray-500);
   color: var(--color-neutral-color-dark-dark-500);
 }
-
 .storybook-button--accent--grey:disabled {
   background-color: var(--color-neutral-color-dark-dark-200);
   color: var(--color-neutral-color-gray-gray-600);
 }
-
-/* Accent Theme - Color Variants (Dark) */
 .storybook-button--accent--dark {
   background-color: var(--color-neutral-color-dark-dark-500);
   color: var(--color-neutral-color-gray-gray-50);
 }
-
 .storybook-button--accent--dark:disabled {
   background-color: var(--color-neutral-color-dark-dark-200);
   color: var(--color-neutral-color-gray-gray-600);
 }
-
-/* Accent Theme - Text Variant with Color */
 .storybook-button--accent.storybook-button--text.storybook-button--accent--blue {
   background-color: transparent;
   color: var(--color-accent-color-blue-blue-500);
 }
-
 .storybook-button--accent.storybook-button--text.storybook-button--accent--blue:disabled {
   color: var(--color-neutral-color-dark-dark-200);
 }
-
-/* Accent Theme - Outline Variant with Color */
 .storybook-button--accent.storybook-button--outline.storybook-button--accent--blue {
   background-color: transparent;
   border-color: var(--color-accent-color-blue-blue-500);
   color: var(--color-accent-color-blue-blue-500);
 }
-
 .storybook-button--accent.storybook-button--outline.storybook-button--accent--blue:disabled {
   border-color: var(--color-neutral-color-dark-dark-200);
   color: var(--color-neutral-color-gray-gray-600);
 }
-
 .storybook-button--accent.storybook-button--outline.storybook-button--accent--grey {
   background-color: transparent;
   border-color: var(--color-neutral-color-gray-gray-500);
   color: var(--color-neutral-color-dark-dark-500);
 }
-
 .storybook-button--accent.storybook-button--outline.storybook-button--accent--grey:disabled {
   background-color: transparent;
   border-color: var(--color-neutral-color-dark-dark-200);
   color: var(--color-neutral-color-gray-gray-600);
 }
-
 .storybook-button--accent.storybook-button--filled.storybook-button--accent--grey {
   background-color: var(--color-neutral-color-gray-gray-500);
   color: var(--color-neutral-color-dark-dark-500);
 }
-
 .storybook-button--accent.storybook-button--filled.storybook-button--accent--grey:disabled {
   background-color: var(--color-neutral-color-dark-dark-200);
   color: var(--color-neutral-color-gray-gray-600);
 }
-
 .storybook-button--accent.storybook-button--outline.storybook-button--accent--dark {
   background-color: transparent;
   border-color: var(--color-neutral-color-dark-dark-500);
   color: var(--color-neutral-color-gray-gray-50);
 }
-
 .storybook-button--accent.storybook-button--outline.storybook-button--accent--dark:disabled {
   background-color: transparent;
   border-color: var(--color-neutral-color-dark-dark-200);
   color: var(--color-neutral-color-gray-gray-600);
 }
-
 .storybook-button--blur {
   background: rgba(19,19,19,0.5);
   backdrop-filter: blur(8px);
   border-radius: var(--spacing-corner-radius-100px);
   color: var(--color-neutral-color-gray-gray-50);
 }
-
 .storybook-button--blur:disabled {
   background: rgba(19,19,19,0.5);
   color: rgba(240,240,240,0.5);
   backdrop-filter: blur(8px);
 }
-
 .storybook-button--blur.storybook-button--outline {
   background-color: transparent;
   border: 1px solid;
   border-color: var(--color-neutral-color-gray-gray-50);
   color: var(--color-neutral-color-gray-gray-50);
 }
-
 .storybook-button--blur.storybook-button--outline:disabled {
   border-color: var(--color-neutral-color-gray-gray-600);
   color: rgba(240,240,240,0.5);
 }
-
 .storybook-button--blur.storybook-button--text {
   background-color: transparent;
   border: none;
   padding: 0;
   color: var(--color-neutral-color-gray-gray-50);
 }
-
 .storybook-button--blur.storybook-button--text:disabled {
   color: rgba(240,240,240,0.5);
 }
-
 .storybook-button--blur.storybook-button--small {
   padding: var(--spacing-gaps-8px) var(--spacing-gaps-16px);
   font-size: var(--typography-typeface-size-regular-paragraph-small);
   line-height: var(--typography-typeface-line-height-14-semibold-label);
 }
-
 .storybook-button--blur.storybook-button--outline.storybook-button--accent--dark {
   background: rgba(19,19,19,0.5);
   border-color: var(--color-neutral-color-gray-gray-50);
   color: var(--color-neutral-color-gray-gray-50);
 }
-
 .storybook-button--blur.storybook-button--outline.storybook-button--accent--dark:disabled {
   border-color: var(--color-neutral-color-gray-gray-600);
   color: rgba(240,240,240,0.5);
 }
-

@@ -1,5 +1,4 @@
 @import '../styles/designTokens.css';
-
 .menu {
   background-color: var(--color-neutral-color-gray-gray-50);
   position: relative;
@@ -8,7 +7,6 @@
   width: 100%;
   height: 100%;
 }
-
 .menu-content {
   display: flex;
   flex-direction: column;
@@ -17,7 +15,6 @@
   width: 100%;
   height: 100%;
 }
-
 .menu-inner-wrapper {
   box-sizing: border-box;
   display: flex;
@@ -30,13 +27,11 @@
   width: 100%;
   height: 100%;
 }
-
 .menu-item-wrapper {
   position: relative;
   flex-shrink: 0;
   width: 100%;
 }
-
 .menu-item-content {
   box-sizing: border-box;
   display: flex;
@@ -48,7 +43,6 @@
   position: relative;
   width: 100%;
 }
-
 .menu-item-row {
   display: flex;
   flex-direction: row;
@@ -57,7 +51,6 @@
   width: 100%;
   height: 100%;
 }
-
 .menu-item-inner-row {
   box-sizing: border-box;
   display: flex;
@@ -70,19 +63,16 @@
   width: 100%;
   cursor: pointer;
 }
-
 .menu-item-inner-row:hover {
   border-radius: var(--spacing-corner-radius-16px);
   background-color: var(--color-neutral-color-gray-gray-100);
 }
-
 .menu-item-icon {
   position: relative;
   flex-shrink: 0;
   width: 16px;
   height: 16px;
 }
-
 .menu-item-text {
   font-family: var(--typography-typeface-family-manrope);
   font-weight: var(--typography-typeface-weight-regular);
@@ -93,7 +83,6 @@
   text-align: left;
   white-space: nowrap;
 }
-
 .menu-item-text p {
   display: block;
   line-height: var(--typography-typeface-line-height-14-semibold-label);

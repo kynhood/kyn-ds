@@ -2,14 +2,12 @@ import { CloseCircle } from '@solar-icons/react';
 import "./bottomSheet.css";
 import "../styles/designTokens.css";
 import { Button } from "./Button";
-
 interface BottomSheetProps {
   headingText?: string;
   paragraphText?: string;
   buttonLabel?: string;
   onButtonClick?: () => void;
 }
-
 export default function BottomSheet({
   headingText = "Heading",
   paragraphText = "Paragraph",

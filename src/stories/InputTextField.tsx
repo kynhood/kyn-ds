@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import './inputTextField.css';
-
 interface InputTextFieldProps {
   heading?: string;
   helpText?: string;
@@ -10,9 +9,7 @@ interface InputTextFieldProps {
   disabled?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
-
 const MAX_HELP_TEXT_CHARS = 50;
-
 const InputTextField: React.FC<InputTextFieldProps> = ({
   heading = '',
   helpText = '',
@@ -26,62 +23,48 @@ const InputTextField: React.FC<InputTextFieldProps> = ({
   const [isError, setIsError] = useState(false);
   const [value, setValue] = useState('');
   const stackblitzRef = useRef<HTMLDivElement>(null);
-
-  // Validate helpText character count
   const validatedHelpText = helpText.length > MAX_HELP_TEXT_CHARS 
     ? helpText.substring(0, MAX_HELP_TEXT_CHARS)
     : helpText;
-  
   if (helpText.length > MAX_HELP_TEXT_CHARS) {
     console.warn(`Help text exceeds ${MAX_HELP_TEXT_CHARS} character limit`);
   }
-
-  // Calculate counter text
   const counter = maxLength ? `${value.length}/${maxLength}` : '';
-
   const getTextColor = () => {
     if (isError) {
       return 'var(--color-accent-color-red-red-500)';
     }
     return '#585858';
   };
-
   const getHeadingTextColor = () => {
     return '#585858';
   };
-
   const getInfoCircleFill = () => {
     if (isError) {
       return 'var(--color-accent-color-red-red-500)';
     }
     return 'var(--color-neutral-color-dark-dark-400)';
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = maxLength ? e.target.value.slice(0, maxLength) : e.target.value;
-    
     if (maxLength && newValue.length === maxLength) {
       setIsError(true);
     } else if (isError) {
       setIsError(false);
     }
-    
     setValue(newValue);
     onChange(e);
   };
-
   const handleFocus = () => {
     console.log('Input field focused');
     setIsActive(true);
   };
-
   const handleBlur = () => {
     console.log('Input field blurred');
     if (!value) {
       setIsActive(false);
     }
   };
-
   const handleClick = () => {
     setIsActive(true);
     setTimeout(() => {
@@ -89,8 +72,6 @@ const InputTextField: React.FC<InputTextFieldProps> = ({
       input?.focus();
     }, 0);
   };
-
-
   return (
     <div className="input-text-field-container">
       <div 
@@ -149,5 +130,4 @@ const InputTextField: React.FC<InputTextFieldProps> = ({
     </div>
   );
 };
-
 export default InputTextField;

@@ -1,7 +1,5 @@
-// Storybook story for the InputTextField component
 import type { Meta, StoryObj } from '@storybook/react';
 import InputTextField from './InputTextField';
-
 export default {
   title: 'Components/InputTextField',
   component: InputTextField,
@@ -19,7 +17,6 @@ export default {
     disabled: { control: 'boolean' }
   }
 } as Meta<typeof InputTextField>;
-
 export const Default: StoryObj<typeof InputTextField> = {
   render: (args) => {
     return <InputTextField {...args} />;

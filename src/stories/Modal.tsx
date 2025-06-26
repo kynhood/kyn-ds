@@ -1,11 +1,9 @@
-import "./modal.css"; // Import the CSS file for the modal
-import { Button } from "./Button"; // Import the Button component
-
+import "./modal.css"; 
+import { Button } from "./Button"; 
 export interface ModalProps {
   headingText?: string;
   paragraphText?: string;
 }
-
 export default function Modal({
   headingText = "Heading",
   paragraphText = "Paragraph",

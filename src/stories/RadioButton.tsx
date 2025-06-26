@@ -1,18 +1,15 @@
 import React from 'react';
 import './RadioButton.css';
-
 interface RadioButtonProps {
   category?: 'inactive' | 'active' | 'error';
   state?: 'active' | 'disabled';
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
-
 export default function RadioButton({ category = 'inactive', state = 'active', onChange }: RadioButtonProps) {
   const renderRadioButton = () => {
     let strokeColor;
     let strokeWidth = "3";
     let r = "8.5";
-
     if (state === 'disabled') {
       switch (category) {
         case 'active':
@@ -41,7 +38,6 @@ export default function RadioButton({ category = 'inactive', state = 'active', o
           break;
       }
     }
-
     return (
       <svg
         className="radio-button-svg"
@@ -59,7 +55,6 @@ export default function RadioButton({ category = 'inactive', state = 'active', o
       </svg>
     );
   };
-
   return (
     <div className="radio-button-container">
       <input

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 import "./checkbox.css";
-
 export interface CheckboxProps {
   label?: string;
   initialChecked?: boolean;
@@ -10,7 +9,6 @@ export interface CheckboxProps {
   onChange?: (checked: boolean) => void;
   error?: boolean;
 }
-
 export default function Checkbox({
   label,
   initialChecked = false,
@@ -21,18 +19,15 @@ export default function Checkbox({
 }: CheckboxProps) {
   const [isChecked, setIsChecked] = useState(initialChecked);
   const checkboxRef = React.useRef<HTMLInputElement>(null);
-
   React.useEffect(() => {
     setIsChecked(initialChecked);
   }, [initialChecked]);
-
   React.useEffect(() => {
     console.log("initialChecked changed:", initialChecked);
     if (checkboxRef.current) {
       checkboxRef.current.indeterminate = indeterminate;
     }
   }, [indeterminate, initialChecked]);
-
   const handleChange = () => {
     if (!disabled) {
       const newCheckedState = !isChecked;
@@ -42,7 +37,6 @@ export default function Checkbox({
       }
     }
   };
-
   const checkboxClass = clsx(
     "checkbox-container",
     {
@@ -52,7 +46,6 @@ export default function Checkbox({
       "checkbox-indeterminate": indeterminate,
     }
   );
-
   return (
     <label className={checkboxClass}>
       <input

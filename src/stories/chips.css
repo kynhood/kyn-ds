@@ -1,46 +1,37 @@
 @import '../styles/designTokens.css';
-/* chips.css */
-
 .chips-container {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-gaps-4px) var(--spacing-gaps-8px); /* gaps/4px and gaps/8px */
-  border-radius: var(--spacing-corner-radius-100px); /* corner-radius/100px */
+  padding: var(--spacing-gaps-4px) var(--spacing-gaps-8px); 
+  border-radius: var(--spacing-corner-radius-100px); 
   font-family: var(--typography-typeface-family-manrope);
-  font-size: var(--typography-typeface-size-semi-bold-label-small); /* typeface-size/semi-bold/label/small */
-  line-height: var(--typography-typeface-line-height-14-semibold-label); /* typeface-line-height/14-semibold-label */
+  font-size: var(--typography-typeface-size-semi-bold-label-small); 
+  line-height: var(--typography-typeface-line-height-14-semibold-label); 
   font-weight: var(--typography-typeface-weight-semi-bold);
-  cursor: pointer; /* Add pointer cursor for interactivity */
+  cursor: pointer; 
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
-
 .chips-active {
-  background-color: var(--color-neutral-color-dark-dark-500); /* neutral-color/dark/dark-500 */
-  color: var(--color-neutral-color-gray-gray-50); /* neutral-color/gray/gray-50 */
+  background-color: var(--color-neutral-color-dark-dark-500); 
+  color: var(--color-neutral-color-gray-gray-50); 
 }
-
 .chips-inactive {
-  background-color: var(--color-neutral-color-gray-gray-500); /* neutral-color/gray/gray-500 */
-  color: var(--color-neutral-color-dark-dark-500); /* neutral-color/dark/dark-500 */
+  background-color: var(--color-neutral-color-gray-gray-500); 
+  color: var(--color-neutral-color-dark-dark-500); 
 }
-
 .chips-disabled {
-  background-color: var(--color-neutral-color-gray-gray-200); /* neutral-color/gray/gray-200 */
-  color: var(--color-neutral-color-dark-dark-100); /* neutral-color/dark/dark-100 */
+  background-color: var(--color-neutral-color-gray-gray-200); 
+  color: var(--color-neutral-color-dark-dark-100); 
   cursor: not-allowed;
   opacity: 0.7;
 }
-
-/* Ensure label color changes with active state */
 .chips-active .chips-label {
-  color: var(--color-neutral-color-gray-gray-50); /* text color for active state */
+  color: var(--color-neutral-color-gray-gray-50); 
 }
-
 .chips-inactive .chips-label {
-  color: var(--color-neutral-color-dark-dark-500); /* text color for inactive state */
+  color: var(--color-neutral-color-dark-dark-500); 
 }
-
 .chips-disabled .chips-label {
-  color: var(--color-neutral-color-dark-dark-100); /* text color for disabled state */
+  color: var(--color-neutral-color-dark-dark-100); 
 } 
